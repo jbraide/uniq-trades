@@ -1,0 +1,95 @@
+{% include 'dashboard/chart.html'%}
+{% load static %}
+{% block body %}
+
+{% include 'dashboard/navigation.html' %}
+
+<!-- greetings -->
+<div class="container">
+    <div class="greetings">
+        <div class="name">
+            {% if user %}
+            <h4 class="greeting-name">{{ user.first_name|title }},</h4>
+            {% else %}
+            <h4 class="greeting-name">User</h4>
+            {% endif %} 
+            {% comment %} time of day {% endcomment %} {% now "H" as now %} 
+            {% if now < 12 %} <span class="greeting">Good Morning</span>
+            <img class="greeting-time-of-day" src="{% static 'images/icons/sunrise.png'%}" alt=""> 
+            {% elif now == 12 %}
+            <span class="greeting">Good Afternoon</span>
+            <img class="greeting-time-of-day" src="{% static 'images/icons/afternoon.png'%}" alt=""> 
+            {% else %}
+            <span class="greeting">Good Evening</span>
+            <img class="greeting-time-of-day" src="{% static 'images/icons/moon.png'%}" alt=""> 
+            {% endif %}
+
+        </div>
+    </div>
+    <!-- account  -->
+    <div class="account-circle">
+        <a href="">
+            <i class="far fa-user"></i>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+<!-- chart -->
+<div class="container">
+    <div class="chart-container">
+        <div class="chart-header">
+            <h4>Chart</h4>
+        </div>
+    </div>
+</div>
+
+<div class="chart-center">
+    <div class="container">
+        <div class="btcwdgt-chart" bw-noshadow="true"></div>
+    </div>
+</div>
+
+
+<!-- trading-history -->
+<div class="container">
+    <h4 class="trading-history-header">Trading history</h4>
+    <div class="trading-history">
+        <table class="table">
+            <tr>
+                <th>Transaction ID</th>
+                <th>Transaction Type</th>
+                <th>Amount</th>
+                <th>
+                    Transaction date
+                    <span class="fas fa-angle-down"></span>
+                </th>
+                <th>Transaction Status</th>
+            </tr>
+            {% for h in history %}
+            <tr>
+                <td>{{ h.transaction_id }}</td>
+                <td>{{ h.transaction_type }}</td>
+                <td>$ {{ h.amount }}</td>
+                <td>{{ h.transaction_date }}</td>
+                <td>{{ h.status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+    <script>
+        (function(b,i,t,C,O,I,N) {
+              window.addEventListener('load',function() {
+                if(b.getElementById(C))return;
+                I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+                I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+              },false)
+            })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');        
+    </script>
+   
+{% endblock  %}

@@ -1,0 +1,18 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content text-center">
+        <div class="undraw-link">
+            <img src="{% static 'images/icons/undraw_message_sent_1030.svg' %} " alt="login-svg" class="undraw-images">
+        </div>
+        
+        <div class="activation-box">
+            <h2>
+                Activation link sent!
+            </h2>
+            <h4>
+                please check your email
+            </h4>
+        </div>        
+    </div>
+{% endblock  %}

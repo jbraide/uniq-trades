@@ -1,0 +1,8 @@
+{% autoescape off %}
+<div class="content">
+    Hi {{ user.username }}
+
+    Plese click on the link below to confirm your registration:
+    http://{{ domain }}{% url 'main:activate' uidb64=uid token=token %}
+    {% endautoescape %}
+</div>

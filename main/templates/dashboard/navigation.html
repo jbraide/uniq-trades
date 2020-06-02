@@ -1,0 +1,84 @@
+{% block mobile %} {% load static %}
+
+<!-- desktop navigation -->
+
+<nav class="navbar navbar-default sidebar" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+            <a class="navbar-brand" href="#">My Profile</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/dashboard">Dashboard<span style="font-size:16px;" class="pull-right hidden-xs showopacity fas fa-home"></span></a></li>
+                <li><a href="/charts">Charts<span style="font-size:16px;" class="pull-right hidden-xs showopacity fas fa-chart-line"></span></a></li>
+                <li><a href="/plans">Plans<span style="font-size:16px;" class="pull-right hidden-xs showopacity fab fa-microsoft"></span></a></li>
+                <li><a href="/account">Account Settings<span style="font-size:16px;" class="pull-right hidden-xs showopacity fas fa-user-shield"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- mobile navigation -->
+<div class="navbar navbar-default navbar-fixed-bottom mobile-navbar">
+    <div class="mobile-nav">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="mobile-nav-container">
+                    <a href="/dashboard">
+                        <div class="icons-text">
+                            <span class="fas fa-home home-nav-icon"></span>
+                            <h3>Home</h3>
+                    </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="mobile-nav-container">
+                    <a href="/charts">
+
+                        <div class="icons-text">
+                            <span class="fas fa-chart-line chart-nav-icon"></span>
+                            <h3>Chart</h3>
+                    </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="mobile-nav-container">
+                    <a href="/plans">
+                        <div class="icons-text">
+                            <!-- <span class="fas fa-"></span> -->
+                            <span class="fab fa-microsoft chart-nav-icon"></span>
+                            <h3>Plans</h3>
+                    </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="mobile-nav-container">
+                    <a href="/account">
+                        <div class="icons-text">
+                            <span class="fas fa-user-user user-nav-icon"></span>
+                            <!-- <i class="fas fa-user user-nav-icon"></i> -->
+                            <h3>Account</h3>
+                    </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

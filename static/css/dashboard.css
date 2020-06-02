@@ -1,0 +1,523 @@
+body{
+    display: none;
+}
+
+/* import fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+@media only screen and (max-width: 768px){
+
+    body{
+        display: contents;
+    }
+
+
+    th {
+        background-color: rebeccapurple;
+        color: whitesmoke;
+    }
+
+
+    /* greeting */
+    
+    .greetings{
+        float: left;
+        margin: 15% 4px;
+    }
+
+    .greeting-time-of-day{
+        width: 35px;
+        height: auto;
+        margin-top: -10px;
+        margin-left: 12px;
+    }
+
+    .account-circle {
+        background-color: #9329D4;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        float: right;
+        margin: 15% 10px;
+    }
+
+
+    .greeting-name {
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 900;
+        letter-spacing: 0.1px;
+    }
+
+    .greeting {
+        font-size: 15px;
+        letter-spacing: 2px;
+        font-weight: 200;
+        color: #7E7A7A;
+    }
+
+    .fa-user{
+        font-size: 30px;
+        color: white;
+        margin: 20% 25%;
+    }
+    
+    /* money information */
+    .money-image{
+        width: 40px;
+        height: auto;
+        float: left;
+    }
+
+    .money-info{
+        width: 95%;
+        height: 105px;
+        background: rgb(246,181,69);
+        background: linear-gradient(0deg, rgba(246,181,69,1) 0%, rgba(65,188,213,1) 39%, rgba(62,183,197,1) 63%, rgba(50,162,135,1) 100%);
+        padding: 20px 5%;
+    }
+
+    .amount-container{
+        float: right;
+        position: relative;
+        left: -35%;
+        color: white;
+    }
+
+    .amount-container > h4 {
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+        top: -5px;
+    }
+
+    /* notifications */
+    .notifications-container  > h3.notification {
+        color: #1E2DB6;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 20px 0;
+    }
+
+    .notifications-list-container{
+        border: 2px solid #1E2DB6;
+        border-radius: 3%;
+        padding: 20px;
+        margin-bottom: 130px;
+    }
+
+    .notification-detail > p{
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    .notification-date-time{
+        font-size: 12px;
+        font-weight: 300;
+        margin: 10px 0;
+        margin-top: 5px
+    }
+
+    .notification-amount > span{
+        font-weight: 900;
+    }
+
+    .green {
+        color: green;
+        font-size: 12px;
+    }
+
+    .red{
+        color: red;
+        font-size: 12px;
+    }
+
+    /* .col-xs-3{
+        width: 0;
+    } */
+
+    /* menu Navigation */
+
+    .icons-text > a {
+        color: black;
+    }
+
+    .icons-text > a > span{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .icons-text > a > h3 {
+        font-size: 14px;
+        margin: 5px 20%;
+    }
+
+    .mobile-nav{
+        margin: 14px;
+    }
+
+    .menu-nav-icon{
+        width: 20px;
+        height: 20px;
+        margin: 0 30%;
+    }
+
+    .home-nav-icon, .chart-nav-icon, .user-nav-icon{
+        font-size: 25px;
+        margin: 0 30%
+    }
+
+    .icons-text > h3 {
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+
+    /* account section */
+    .account-options-container{
+        margin: 0 2%;
+        margin-top: 15%;
+        margin-bottom: 20%;
+    }
+
+    .account-name{
+        font-style: normal;
+    }
+
+    .account-options > a{
+        color: black;
+    }
+
+    .account-options > a > img{
+        width: 25px;
+        height: auto;
+        margin-right: 32px;
+    }
+
+    .account-options > a > span {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .options-name{
+        margin-top: 3px;
+    }
+
+    .account-options{
+        border: 2px solid black;
+        margin: 20px 4%;
+        padding: 20px
+    }
+    #logout {
+        color: red;
+    }
+
+    /* account settings */
+    .close-button {
+        float: right;
+        margin: 10% 20px
+    }
+
+    .close-button > a {
+        color: black;
+    }
+
+    .close-button > a > span {
+        font-size: 20px;
+    }
+
+    .close-button-nav {
+        margin: 0 35%;
+    }
+
+    .close-button-nav > a {
+        background-color: #D7293A;
+        color: white;
+        padding: 17px 32px;
+        font-size: 17px;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+
+    .fixed-bottom-padding{
+        padding: 20px 0;
+    }
+
+    /* withdraw funds */
+
+    .dual-button{
+        margin-left: 10px;
+        font-weight: 900;
+        text-transform: uppercase;
+
+    }
+
+    div > .btn-1{
+        background-color: #1E2DB6;
+        color: white;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    div > .btn-2{
+        background-color: #D7293A;
+        color: white;
+        padding: 15px 20px;
+        margin-left: 20px;
+        font-size: 16px;
+
+    }
+
+    .withdrawal-labels {
+        color: #7E7A7A;
+        padding: 3% 0;
+    }
+
+    .withdrawal-requirements{
+        margin: 0 1.6%;
+    }
+
+    .form-control.withdrawal-bottom-margin{
+        margin-bottom: 20px;
+    }
+
+    .withdrawal-account-header { 
+        margin-bottom: 0;
+    }
+
+    /* chart */
+
+    .chart-image {
+        height: auto;
+        width: 300px;
+        margin: 10px 10%;
+    }
+
+    .trading-history{
+        margin-bottom: 20%;
+        overflow: scroll;
+    }
+
+
+    /* investment plans */
+    .main-investment-container{
+        margin-bottom: 23%;    
+    }
+
+    .investment-plans-container{
+        color: white;
+        background-color: #53B3CB;
+        width: 60%;
+        padding: 10% 0;
+        margin: 0 15%;
+        margin-bottom: 30px;
+        margin-top: -1%;
+        text-transform: uppercase;
+    }
+    
+    .package-name > h4 {
+        font-size: 18px;
+        margin: 0;
+        font-weight: 400;        
+        letter-spacing: 1px;
+    }
+
+    .package-shape {
+        border: 3px solid white;
+        border-radius: 50%;
+        margin: 10% 30%;
+    }
+
+    .package-percentage > h3{
+        font-size: 20px;
+        font-weight: 700;
+        padding: 20px;
+    }
+
+    .investment-price > h4 {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .per-rebate {
+        font-size: 14px;
+        float: left;
+        margin: 10% 0;
+        margin-left: 10%;
+    }
+
+    .total-return {
+        float: right;
+        margin: 10% 5%;
+    }
+
+    
+
+    .choose-plan > form > button{
+        margin: 3% 0;
+        background-color: #8AE1FC;
+        border: none;
+        padding: 5px 15px;
+        color: #7B3E19;
+        font-weight: bold;
+    }
+
+    .choose-plan > form > button.deep-chestnut-button {
+
+        background-color: #101419;
+        color: #D7B49E;
+    }
+
+    .choose-plan > form > button.mustard-button {
+        background-color: #2E5266;
+        color: #D3D0CB; 
+    }
+
+    .deep-chestnut-color{
+        background-color: #BA3B46;
+    }
+
+    .mustard-color{
+        background-color: #ED9B40;
+    }
+    /* withdraw funds */
+
+    .withdraw-funds-header {
+        margin-left: 3%;
+    }
+
+    /* withdrawal account */
+    .withdrawal-account-container{
+        background-color: #1E2DB6;
+        color: white;
+        padding: 20%
+    }
+
+    .withdrawal-account-info > h4 {
+        font-weight: 900;
+        font-size: 30px;
+    }
+    
+    .withdrawal-account-info > span {
+        font-weight: 200;
+        letter-spacing: 1px;
+    }    
+    /* contact us */
+
+    .contact-image-container{
+        margin: 0 25%;
+    }
+
+    #contact-image {
+        width: 200px;
+        height: auto;
+    }
+
+    #contact-header > span {
+        font-size: 15px;
+        color: #7E7A7A;
+    }
+    #contact-header {
+        margin: 10% 0;
+    }
+    #email {
+        border: 2px solid black;
+        padding: 2% 10px;
+        margin-bottom: 20px;
+    }
+
+    #email > img {
+        float: right;
+    }
+
+    #email > span {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.9px;
+        color: #7E7A7A;
+    }
+
+    .email{
+        margin-bottom: 2%;
+        font-size: 15px;
+        color: #7E7A7A;
+        letter-spacing: 0.8px;
+    }
+
+    .copy-button {
+        width: 20px;
+        height: auto;
+    }
+
+    .social-media{
+        border: 2px solid black;
+        margin: 2% 0;
+        padding: 2% 10px;
+    }
+
+    .social-media-container{
+        margin-bottom: 4%;
+    }
+
+    /* deposit */
+    .deposit-container {
+        width: 100%;
+    }
+    
+    #wallet-id-header{
+        color: #7E7A7A;
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    #wallet-id {
+        /* font-size: 24px; */
+        font-weight: 900;
+    }
+
+    .or{
+        margin: 8%;
+        font-size: 24px;
+        color: red;
+        font-weight: 900;
+    }
+
+    #pay-w-card {
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: #1E2DB6;
+        padding: 20px 10%;
+    }
+
+    /* owl carousel settings for image  */
+    .owl-carousel .owl-item img {
+        width: 60px;
+    }
+    .owl-next > span {
+        left: 360px;
+    }
+    
+    .owl-prev > span, .owl-next > span {
+        font-size: 30px;
+        position: relative;
+        top: - 75px;
+    }   
+}
+
+@media only screen and (max-width: 640px){
+    .amount-container{
+        left: -35%;
+    }
+    .account-options-container{
+        margin-bottom: 25%;
+    }
+    .account-options > a > span{
+        font-size: 15px;
+    }
+}

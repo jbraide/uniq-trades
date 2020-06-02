@@ -1,0 +1,31 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Deposit with card{% endblock %}
+{% block content %}
+{% load widget_tweaks %}
+    <div class="container bottom-margin">
+        <div class="row">
+            <div class="col-xs-1  back">
+                <a href="{% url 'main:account' %}">
+                    <span class="fas fa-arrow-left"></span>
+                </a>
+            </div>
+        <div class="col-xs-11">
+            <h1 class="text-center all-header">PAY WITH CREDIT CARD</h1>
+        </div>
+        </div>
+        <form action="" method="post" class="form-group">
+            {% csrf_token %}
+            {% for field in form %}
+            <label for=""> 
+                {{ field.label_tag }}
+            </label>
+                {{ field|add_class:'form-control' }}
+                <br>
+            {% endfor %}
+            <button type="submit" class="all-button">Pay</button>
+        </form>
+        
+    </div>
+
+    </div>
+{% endblock  %}

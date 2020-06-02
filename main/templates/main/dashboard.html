@@ -1,0 +1,218 @@
+{% include 'dashboard/base.html' %}
+<!-- {% block title %}Dashboard{% endblock %} -->
+{% load static %} {% block body %}
+
+<!-- Navigation -->
+
+{% include 'dashboard/navigation.html' %}
+
+<!-- greetings -->
+<!-- 
+  *-f-r = float right
+-->
+<div class="content-f-r">
+    <!-- greetings -->
+    <div class="container">
+        <div class="greetings">
+
+            <!-- reinstall -->
+            <div class="name">
+                {% if user %}
+                <h4 class="greeting-name">{{ user.first_name|title }},</h4>
+                {% else %}
+                <h4 class="greeting-name">User</h4>
+                {% endif %}
+                 {% comment %} time of day {% endcomment %}
+                 {% now "H" as now %} {% if now < 12 %}
+                 <span class="greeting">Good Morning</span>
+                    <img class="greeting-time-of-day" src="{% static 'images/icons/sunrise.png'%}" alt=""> {% elif now == 12 %}
+                    <span class="greeting">Good Afternoon</span>
+                    <img class="greeting-time-of-day" src="{% static 'images/icons/afternoon.png'%}" alt=""> {% else %}
+                    <span class="greeting">Good Evening</span>
+                    <img class="greeting-time-of-day" src="{% static 'images/icons/moon.png'%}" alt=""> {% endif %}
+
+            </div>
+        </div>
+        <!-- account  -->
+        <div class="account-circle">
+            <a href="">
+                <i class="far fa-user"></i>
+            </a>
+        </div>
+
+    </div>
+
+        <!-- desktop view of the amount  -->
+        <div id="mobile-version-amount-off">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="money-info item">
+                            <div class="current-balance-background">
+                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+
+                                <!-- remove -->
+                                <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
+                                <div class="amount-container">
+                                    <span class="current-balance">Current Balance</span>
+                                     {% if balance %}
+                                    <h4>$ {{ balance.amount }}</h4>
+                                    {% else %}
+                                    <h4>$ 0.00 </h4>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="money-info item">
+                            <div class="total-deposits-background">
+                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                                <div class="amount-container">
+                                    <span class="total-deposits">Total Deposits</span> 
+                                    {% if total_deposit %}
+                                    <h4>{{ total_deposit.amount }}</h4>
+                                    {% else %}
+                                    <h4>$ 0.00 </h4>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="money-info item">
+                            <div class="current-balance-background">
+                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                                <div class="amount-container">
+                                    <span class="total-withdrawals">Total Withdrawals</span>
+                                        {% if total_withdrawal %}
+                                            <h4>{{ total_withdrawal.amount }}</h4>        
+                                        {% else %}
+                                            <h4>$ 0.00 </h4>        
+                                        {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- current balance et al information -->
+        <div class="mobile-version-amount-on">
+            <div class="container owl-carousel">
+                <div class="money-info item">
+                    <div class="current-balance-background">
+                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+
+                        <!-- remove -->
+                        <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
+                        <div class="amount-container">
+                            <span class="current-balance">Current Balance</span>
+                            <!-- {% if balance %}
+                        <h4>$ {{ balance.amount }}</h4>        
+                    {% else %}
+                        <h4>$ 0.00 </h4>        
+                    {% endif %}  -->
+                            <h4>$ 0.00 </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="money-info item">
+                    <div class="total-deposits-background">
+                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                        <div class="amount-container">
+                            <span class="total-deposits">Total Deposits</span>
+                            <!-- {% if total_deposit %}
+                        <h4>{{ total_deposit.amount }}</h4>        
+                    {% else %}
+                        <h4>$ 0.00 </h4>        
+                    {% endif %}     -->
+                            <h4>$ 0.00 </h4>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="money-info item">
+                    <div class="current-balance-background">
+                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                        <div class="amount-container">
+                            <span class="total-withdrawals">Total Withdrawals</span>
+
+                            <!-- {% if total_withdrawal %}
+                        <h4>{{ total_withdrawal.amount }}</h4>        
+                    {% else %}
+                        <h4>$ 0.00 </h4>        
+                    {% endif %} -->
+                            <h4>$ 0.00 </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <!-- reinstall -->
+            <!-- {% include 'dashboard/messages.html' %} -->
+        </div>
+
+        <div class="container">
+            <!-- notifications -->
+            <div class="notifications-container">
+                <h3 class="notification">Notifications</h3>
+                <div class="notifications-list-container">
+
+                    <!-- reinstall -->
+                    {% for noti in notification %}
+                <div class="row">                    
+                    <div class="col-xs-1">
+                        <span class="fas fa-circle green"></span>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="notification-detail">
+                            <p>{{ noti.notification_detail }}</p>
+                        </div>
+                        <div  class="notification-date-time">
+                            <span>Date: {{ noti.notification_date_time }} </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="notification-amount">
+                        {% if noti.optional_amount %}
+                            <span>{{ noti.optional_amount }}</span>
+                        {% else %}
+                            <span>-</span>
+                        {% endif %}
+                        </div>
+                    </div>
+        
+                </div>
+            {% endfor %}
+
+                    <div class="row">
+                        <div class="col-xs-1">
+                            <span class="fas fa-circle red"></span>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="notification-detail">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            </div>
+                            <div class="notification-date-time">
+                                <span>Date: Thur, 10 Oct 1996 18:11:10 GMT</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="notification-amount">
+                                <span>- $50</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}

@@ -1,0 +1,113 @@
+{% include 'dashboard/base.html' %} 
+<!-- {% block title %}Plans{% endblock %} -->
+{% block body %}
+{% load static %}
+{% include 'dashboard/navigation.html' %}
+
+       <!-- greetings -->
+    <div class="container">
+        <div class="greetings">
+            <div class="name">
+                <h4 class="greeting-name">
+                    Investment
+                    <br>
+                    Plans
+                </h4>            
+            </div>
+        </div>
+        <!-- account  -->
+        <div class="account-circle">
+            <a href="">
+                <i class="far fa-user"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- investment plans  -->
+    <div class="main-investment-container text-center">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- silver account  -->
+                    <div class="plan-background">
+                        <div class="plan-icon">
+                            <div id="icon-image">
+                                <!-- <img src="{% static 'images/icons/silver-logo.png' %}" alt=""> -->
+                                <img src="../../static/images/icons/gold-logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="acct-title">
+                            <h3>SILVER ACCOUNT</h3>
+                        </div>
+                        <div class="deposit">
+                            <span>
+                                Minimum Deposit - $300.00
+                            </span>
+                        </div>
+                        <div class="profit">
+                            <span>
+                                Profit - $ 3500.00 and above
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Gold account -->
+                    <div class="plan-background">
+                        <div class="plan-icon">
+                            <div id="icon-image">
+
+                                <!-- reactivate -->
+                                <!-- <img src="{% static 'images/icons/gold-logo.png'  %}" alt=""> -->
+                                <img src="../../static/images/icons/gold-logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="acct-title">
+                            <h3>GOLD ACCOUNT</h3>
+                        </div>
+                        <div class="deposit">
+                            <span>
+                                Minimum Deposit - $750.00
+                            </span>
+                        </div>
+                        <div class="profit">
+                            <span>
+                                Profit - $ 8000.00 and above
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- premium account -->
+                    <div class="plan-background">
+                        <div class="plan-icon">
+                            <div id="icon-image">
+                                <!-- <img src="{% static 'images/icons/premium.png'  %}" alt=""> -->
+                                <img src="../../static/images/icons/gold-logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="acct-title">
+                            <h3>PREMIUM ACCOUNT</h3>
+                        </div>
+                        <div class="deposit">
+                            <span>
+                                Minimum Deposit - $300.00
+                            </span>
+                        </div>
+                        <div class="profit">
+                            <span>
+                                Profit - $ 3500.00 and above
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+            <!-- end -->
+        </div>
+    </div>
+
+{% endblock  %}
+

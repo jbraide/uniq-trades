@@ -1,0 +1,51 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Deposit{% endblock %}
+{% block content %}
+{% load static %}
+        <!-- close button -->
+        <div class="container">
+                <div class="close-button">
+                        <a href="">
+                            <span class="fas fa-times"></span>
+                        </a>
+                    </div>
+        </div>
+
+            <!-- greetings -->
+    <div class="container">
+            <div class="greetings withdraw-funds-header">
+                <div class="name">
+                    <h4 class="greeting-name">Deposit</h4>
+                    <span class="greeting">
+                        Choose a payment method to start Investing!
+                    </span>
+                </div>
+            </div>
+    </div>
+    <div class="container">
+        <div class="deposit-container text-center">
+            <div class="deposit-w-bitcoin">
+                <label for="" id="wallet-id-header">wallet Id</label>
+                <br>
+                <!-- <h4 id="wallet-id">18bWGmHYJsbyqgQQXBNdkmTawnvfrfeXGn</h4> -->
+                <input type="text" name="bitcoin-wallet" id="wallet-id" value="18bWGmHYJsbyqgQQXBNdkmTawnvfrfeXGn">
+                <!-- <img class="copy-button" src="{% static 'images/icons/copy.png'%}" alt="copy"> -->
+                <button onclick="copyBTClink()" onmouseout="outFunc()">
+                    <span class="tooltiptext" id="myTooltip">
+                        Copy to Clipboard
+                    </span>
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="or">
+                <span>OR</span>
+            </div>
+
+            <div class="pay-w-card-container">
+                <a href="{% url 'main:credit-card' %}" id="pay-w-card">DEPOSIT WITH CARD</a>
+            </div>
+        </div>
+    </div>
+    
+{% endblock  %}

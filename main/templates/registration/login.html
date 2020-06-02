@@ -1,0 +1,42 @@
+{% extends 'dashboard/base.html' %} {% block title %}Login{% endblock %} {% block content %} {% load static %} {% load widget_tweaks %}
+
+<!-- 
+    *-s-l => side left
+    *-r => right 
+-->
+<div class="login-registration-s-l">
+    <img src="../../static/images/brown-and-gray-rock-formation-1884306.jpg" alt="">
+</div>
+<div class="container bottom-margin login-reg-r">
+    <div class="undraw-container">
+        <!-- <img src="{% static 'images/icons/undraw_Login_v483.svg' %} " alt="login-svg" class="undraw-images"> -->
+        <img src="../../static/images/icons/undraw_Login_v483.svg" alt="login-svg" class="undraw-images">
+    </div>
+    <h1 class="text-center all-header">LOGIN</h1>
+    <form action="" method="POST" class="form-group">
+        {% csrf_token %}
+
+        <!-- field errors -->
+        {% if form.errors %} {% for err_field in form %} {% for error in err_field.errors %}
+        <div class="alert alert-danger">
+            <strong>
+                {{ error|escape }}
+                </strong>
+        </div>
+        {% endfor %} {% endfor %} {% endif %} {% for field in form %}
+        <p>
+            <label for="">{{ field.label_tag }}</label>
+            <br> {{ field|add_class:'form-control' }}
+            <small style='color:grey'>
+                {{ field.help_text }}
+            </small>
+            <br>
+        </p>
+        {% endfor %}
+        <button type="submit" class="all-button">Login </button>
+    </form>
+    <br>
+    <p>Go<a href="{% url 'main:index' %} "> Home </a></p>
+    <p>Don't have an account <a href="{% url 'register' %} ">Register</a></p>
+</div>
+{% endblock %}

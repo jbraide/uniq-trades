@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  -->
+<!-- {% load static %} -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- replace and remove -->
+    <!-- <title>{% block title %} Home {% endblock %}</title> -->
+    <title>Home</title>
+
+    <!-- bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- css -->
+
+    <!-- replace and remove -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %} ">
+
+
+
+
+    <!-- Animate.css -->
+
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'css/animate.css' %} "> -->
+
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.min.css">
+
+    <!-- wowjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+
+    <!-- chatapp -->
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e9860e969e9320caac43982/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <!-- main js file -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- <style>
+      .content{
+        display: none;
+      }
+      div#loading{
+        top: 20%;
+        margin: 50% 35%;
+        margin-top: 90%;
+      }
+
+      #loading img {
+        width: 100px;
+      }
+    </style> -->
+</head>
+
+<body>
+    <!-- <div id="completed">
+      <div id="loading" style="display: none;">
+        <img src="{% static 'images/icons/loading.gif' %}" alt="">
+      </div> -->
+
+    <div class="content">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+               </button>
+                    <a class="navbar-brand" href="#">
+                        <!-- replace and remove -->
+                        <!-- <img alt="Brand" class="logo" src="{% static 'images/uniqtrades-logo.png' %}"> -->
+                        <img alt="Brand" class="logo" src="/static/images/uniqtrades-logo.png">
+
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <!-- re-install -->
+
+                        {% if user.is_authenticated %}
+                  <li><a href="/dashboard">Dashboard</a></li>
+                  <li><a href="/logout">Logout</a></li>
+                {% else%}
+                 <li class="active"><a href="/login">Login<span class="sr-only">(current)</span></a></li>
+                 <li><a href="/register">Register</a></li>
+                 {% endif %}
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+
+
+        <!-- Banner  -->
+
+        <div class="animate bounceIn banner">
+
+            <div class="text-wrapper">
+                <div class="header">
+                    <h3 class="">WELCOME TO YOUR
+                        <br> LOW RISK
+                        <br> INVESTMENT PLATFORM
+                        <br>
+                    </h3>
+                </div>
+                <div class="other-text">
+                    <span>
+                  
+                 </span>
+                </div>
+                <div class="button-call-to-action">
+                    <!-- <a href="/register" class="join-us">
+                  JOIN US
+                </a> -->
+                    <button class="join-us">
+                   Join Us
+                 </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- end of banner -->
+
+
+        <!-- about us  -->
+
+        <div id="about-us-image">
+            <img src="../../static/images/Daco_2574992.png" alt="" id="about-side-image" class="animated bounce infinite">
+        </div>
+
+        <!-- *-f-r # float right -->
+        <div class="wow bounceInRight desktop-f-r">
+            <div class="about-us-banner">
+                <div class="about-us-inner-margin">
+
+                    <div id="desktop-about-width">
+                        <h3 class="text-center about-us-header wow bounceInDown">ABOUT UNIQ TRADES</h3>
+                        <!-- <span class=""></span>
+            -->
+                        <div class="line-under wow rubberBand"></div>
+                        <p class="about-us wow slideInRight">
+                            We provide fastest trading using modern technologies. No delays in order executions and most accurate quotes. Our trading platform is available around the clock and on weekends. Uniqtrades customer service runs 24/7. We are continuously adding new financial
+                            instruments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of about us  -->
+
+
+        <!-- how we work -->
+        <div class="thin-border wow flipInX">
+            <div class="how-we-work-background animated rubberBand">
+                <h4 class="text-center service-header animated lightSpeedIn">HOW WE WORK</h4>
+            </div>
+        </div>
+
+        <div class="how-we-work">
+            <div class="services-padding">
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+
+                            <div class="service-details">
+                                <div class="service-icon">
+
+                                    <!-- replace and remove -->
+                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/shield.png'%}" alt=""> -->
+                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/shield.png" alt="">
+
+                                </div>
+                                <div class="service-body">
+                                    <h5 class="text-center main-service-header wow fadeIn">Uncompromised Safety</h5>
+                                    <p class="text-center main-service-subheading wow fadeIn">
+                                        With six regulatory authorities and segregated accounts, your money is protected at all times.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+
+                            <div class="service-details">
+                                <div class="service-icon wow fadeIn">
+
+                                    <!-- replace and remove -->
+                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/search.png'%}" alt=""> -->
+                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/search.png" alt="">
+                                </div>
+                                <div class="service-body">
+                                    <h5 class="text-center main-service-header wow fadeIn">No Hidden Fees</h5>
+                                    <p class="text-center main-service-subheading wow fadeIn">
+                                        We offer 5% commissions.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+
+                            <div class="service-details">
+                                <div class="service-icon wow fadeIn">
+
+                                    <!-- replace and remove -->
+                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/24-7.png'%}" alt=""> -->
+                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/24-7.png" alt="">
+                                </div>
+                                <div class="service-body">
+                                    <h5 class="text-center main-service-header wow fadeIn">Bitcoin Never Goes to Sleep</h5>
+                                    <p class="text-center main-service-subheading wow fadeIn">
+                                        Uniqtrade is one of the few brokers offer around-the-clock service and support in 14 languages.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+
+                            <div class="service-details">
+                                <div class="service-icon wow fadeIn">
+
+                                    <!-- replace and remove -->
+                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/risk.png'%}" alt=""> -->
+                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/risk.png" alt="">
+                                </div>
+                                <div class="service-body">
+                                    <h5 class="text-center main-service-header wow fadeIn">Limit Your Risk </h5>
+                                    <p class="text-center main-service-subheading wow fadeIn">
+                                        You can preset profit and loss levels by using stop losses or take profit limits when you trade. Determine the maximum amount you are prepared to risk when speculating on the price, or set a price at which you want to take profits. Future orders like
+                                        Buy Stops and Buy Limits are also available.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="service-details">
+                                <div class="service-icon wow fadeIn">
+
+                                    <!--replace and remove  -->
+                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/dollar.png'%}" alt=""> -->
+                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/dollar.png" alt="">
+                                </div>
+                                <div class="service-body">
+                                    <h5 class="text-center main-service-header wow fadeIn">Trade Cryptos Against Fiat Currencies</h5>
+                                    <p class="text-center main-service-subheading wow fadeIn">
+                                        Unlike many exchanges out there, who are restricting their clients to trade only Crypto to Crypto, our clients can trade Cryptos against Fiat currencies (USD, EUR, JPY etc.), as well.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- end of how we work -->
+
+
+
+
+        <!-- bitcoin -information -->
+
+        <div class="wow bounceInUp">
+            <div class="bitcoin-information text-center container">
+                <h3 class="">CRYPTO-CURRENCY
+                    <br/> INFORMATION</h3>
+                <div class="line-under"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="chart-center">
+                <div class="btcwdgt-chart" bw-noshadow="true"></div>
+            </div>
+        </div>
+        <!-- end of bitcoin information -->
+
+        <!-- help section -->
+
+        <section class="help text-center">
+            <h3 class="wow fadeInRight">HAVE A QUESTION?</h3>
+            <h3 class="wow slideInLeft">WE HELP HERE</h3>
+            <span id="support-email wow bounceIn">support@uniqtrades.com</span>
+        </section>
+
+        <!-- end of help section -->
+
+        <!-- company information -->
+        <div class="company-information-container text-center ">
+            <h3 class="company-information wow bounce">Company Information</h3>
+            <div class="line-under wow rubberBand"></div>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="company-name">
+                            <h4 class="wow slideInRight">COMPANY NAME</h4>
+                            <h3 class="wow bounceInUp">UNIQ TRADES</h3>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="company-number">
+                            <h4 class="wow slideInRight">COMPANY NUMBER</h4>
+                            <h3 class="wow bounceInUp">#06514515</h3>
+                        </div>
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+
+
+
+
+            <!-- footer -->
+            <footer class='footer-color  text-center'>
+                <div class="footer-img wow bounceIn">
+                    <img src="./static/images/uniqtrades-logo.png" alt="">
+                </div>
+                <div class="footer-contact-section">
+
+                    <!-- location -->
+                    <h3 class="wow slideInRight">
+                        Location
+                    </h3>
+                    <p>
+                        <i class="fas fa-map-pin wow slideInLeft"></i> 3426 E Elgin St, Gilbert, AZ, 85296
+                    </p>
+                    <!-- phone -->
+                    <h3 class="wow slideInRight">Phone</h3>
+                    <p>
+                        <i class="fas fa-mobile slideInLeft"></i> +1 (480) 361-5311
+                    </p>
+
+                    <!-- email -->
+                    <h3 class="wow slideInRight">E-mail Us</h3>
+                    <p>
+                        <i class="fas fa-envelope slideInLeft"></i> support@uniqtrades.com
+                    </p>
+                </div>
+                <div class="text-center wow fadeInRight">
+                    <p><strong>All rights reserved &copy; 2020</strong></p>
+                </div>
+            </footer>
+            <!-- end of footer -->
+        </div>
+    </div>
+    <script>
+        (function(b, i, t, C, O, I, N) {
+            window.addEventListener('load', function() {
+                if (b.getElementById(C)) return;
+                I = b.createElement(i), N = b.getElementsByTagName(i)[0];
+                I.src = t;
+                I.id = C;
+                N.parentNode.insertBefore(I, N);
+            }, false)
+        })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
+
+        //  $(
+        //    function(){
+        //      $('#loading').fadeOut(4000, function(){
+        //        $(".content").fadeIn(3000)
+        //      })
+        //    }
+        //   // function(){
+        //   //   $('#loading').fadeOut(3000);
+        //   //   $('.content').fadeIn(5000);
+        //   // }
+        //  ) 
+        wow = new WOW({
+            boxClass: 'wow', // default
+            animateClass: 'animated', // default
+            offset: 0, // default
+            mobile: true, // default
+            live: true // default
+        });
+        wow.init()
+    </script>
+</body>
+
+</html>
