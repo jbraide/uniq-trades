@@ -109,8 +109,20 @@ for j in range(20, 25):
 
 
 
-class Withdraw(models.Model):
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
+class BankTransfer(models.Model):
+    full_name = models.CharField(max_length=50, default='')
+    address = models.TextField()
+    routing_number = models.PositiveIntegerField()
+    account_number = models.PositiveIntegerField()
+    account_type = models.CharField(max_length=20, help_text='Savings, current, etc')
+    swift_code = models.CharField(max_length=15)
+    local_currency = models.CharField(max_length=20)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)    
+    password = models.CharField(max_length=30, default = '')
+
+class Bitcoin(models.Model):
+    bitcoin_address = models.CharField(max_length=40)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)    
     password = models.CharField(max_length=30, default = '')
 
 class CreditCard(models.Model):

@@ -1,44 +1,235 @@
 /* import fonts */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
 
-body{
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+body {
     background-color: #090030;
     color: #e2e4eb;
-}
-/* underconstruction */
-#under-construction-image {
-    width: 40%;
-}
-
-#under-construction-inside{
-    margin-top: 5%;
-}
-
-#under-construction-inside > h3 {
-    font-size: 230%;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 5%;
-    margin-bottom: 1%;
 }
 
 #completed {
     display: none;
 }
 
+
 /* import fonts */
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
 
-@media only screen and (max-width:768px){
+/* desktop view */
+
+@media only screen and (min-width: 800px) {
+    /* navigation */
+    .navbar {
+        margin-bottom: 0;
+    }
+    .nav.navbar-nav {
+        margin-left: 85%;
+        margin-top: 0.6%;
+    }
+    .navbar-brand>img.logo {
+        width: 30px;
+        position: absolute;
+        top: 1%;
+    }
+    .navbar-default {
+        height: 70px;
+    }
+    /* banner */
+    .banner {
+        background-image: url('../images/geometric-shapes.jpg');
+        height: 580px;
+        width: 100%;
+    }
+    .text-wrapper {
+        padding-top: 10%;
+        padding-left: 5%;
+    }
+    .header>h3 {
+        font-size: 225%;
+        letter-spacing: 2px;
+        line-height: 150%;
+        font-weight: bold;
+    }
+    .button-call-to-action {
+        margin-top: 4%;
+    }
+    .button-call-to-action>button {
+        padding: 15px 100px;
+        background: linear-gradient(90deg, rgba(61, 193, 227, 1) 0%, rgba(165, 68, 98, 1) 50.83%, rgba(214, 59, 233, 1) 100%);
+        border: none;
+    }
+    /* about us */
+    .line-under {
+        border: 2px solid #b7bace;
+        width: 70px;
+        margin: 10px 43%;
+    }
+    #about-us-image {
+        /* background-color: #c7badd; */
+        height: 500px;
+        width: 50%;
+        float: left;
+        margin-bottom: 20px;
+    }
+    #about-side-image {
+        width: 300px;
+        margin: 5% 28%;
+    }
+    .desktop-f-r {
+        float: right;
+        clear: right;
+        width: 50%;
+    }
+    #desktop-about-width {
+        margin: 10% 10%;
+    }
+    .about-us-header {
+        font-weight: bold;
+        font-size: 180%;
+        padding-top: 4%;
+        padding-bottom: 2%;
+    }
+    .about-us {
+        text-align: center;
+        padding: 5% 6%;
+        font-size: 140%;
+        line-height: 184%;
+    }
+    /* how we work */
+    .thin-border {
+        clear: both;
+        border: 3px solid #c7badd;
+        border-radius: 17px;
+        padding: 0 20px;
+        width: 50%;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    .how-we-work {
+        background-color: #1E265B;
+        padding: 20px 0;
+    }
+    .how-we-work-background {
+        background: linear-gradient(142deg, rgba(65, 71, 118, 1) 10%, rgba(138, 142, 172, 1) 48%, rgba(30, 38, 91, 1) 90%);
+        width: 60%;
+        height: 110px;
+        margin: 0 auto;
+        color: white;
+    }
+    .how-we-work-background>h4 {
+        padding-top: 13%;
+        font-weight: bold;
+        font-size: 165%;
+    }
+    .service-icon {
+        background-color: #e2e4eb;
+        height: 132px;
+        width: 132px;
+        border-radius: 50%;
+        margin: 0 35%;
+    }
+    .service-images {
+        width: 60.21px;
+        height: auto;
+        margin: 28% 28%;
+    }
+    .service-details {
+        margin-bottom: 30px;
+        color: #e2e4eb;
+    }
+    .main-service-header {
+        font-size: 140%;
+        font-weight: 900;
+        letter-spacing: 2px;
+        padding: 15px 0;
+    }
+    .main-service-subheading {
+        margin: 0 15%;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 180%;
+        font-weight: 300;
+    }
+    .chart-center {
+        padding-left: 17%;
+    }
+    /* support */
+    .help {
+        background-color: #D7293A;
+        color: white;
+        padding: 80px 0;
+        /* filter: drop-shadow(0, 10px, 25px, black); */
+        box-shadow: 0 10px 25px black;
+    }
+    #support-email {
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 4px;
+    }
+    .company-information-container {
+        /* background-image: url('../images/right-shape.png'); */
+        width: auto;
+        height: 400px;
+    }
+    .company-name,
+    .company-number {
+        color: #C5C6CC;
+        font-size: 14px;
+        font-weight: 200;
+    }
+    .company-name>h3,
+    .company-number>h3 {
+        color: #88898D;
+        font-size: 24px;
+        font-weight: 500;
+    }
+    footer {
+        background-color: #201c42;
+        width: 100%;
+        color: #e2e4eb;
+        /* margin: 1% 0; */
+        padding-bottom: 1%;
+    }
+    .footer-contact-section>h3 {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+    .footer-contact-section>p {
+        color: #7E7A7A;
+        font-size: 15px;
+    }
+    .footer-contact-section>p>svg {
+        margin-right: 1%;
+    }
+    .footer-img img {
+        width: 100px;
+        /* margin: 0 40%; */
+    }
+    .footer-link a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 18px
+    }
+    .footer-link a:hover {
+        color: grey;
+    }
+}
+
+
+/* mobile view */
+
+@media only screen and (max-width:768px) {
+    #about-us-image {
+        display: none;
+    }
     #under-construction {
         display: none;
     }
-
     #completed {
         display: contents;
     }
-
-    .red{
+    .red {
         background-color: red;
     }
     /* navbar */
@@ -46,15 +237,14 @@ body{
         padding: 10px 0;
         margin-bottom: 0;
     }
-    .logo{
+    .logo {
         position: absolute;
         top: 12px;
-        height: 50px;   
+        height: 50px;
         width: auto;
     }
-
     /* banner */
-    .banner{
+    .banner {
         position: relative;
         /* top: 10px; */
         background-image: url('../images/geometric-shapes.jpg');
@@ -64,47 +254,44 @@ body{
         color: white;
         letter-spacing: 1%;
     }
-
-    .text-wrapper{
+    .text-wrapper {
         margin-left: 30px;
     }
-    .header{
+    .header {
         position: absolute;
         top: 80px;
-        font-size: 30px;;
+        font-size: 30px;
+        ;
     }
-
-    .header > h3{
+    .header>h3 {
         line-height: 151%;
         font-weight: 900;
-    } 
-
+    }
     .other-text {
         position: absolute;
         top: 208px;
         margin: 15px 0;
         margin-right: 150px;
     }
-
-    .button-call-to-action > button {
+    .button-call-to-action>button {
         position: absolute;
         top: 300px;
         margin-right: 150px;
         padding: 15px 100px;
-        background: rgb(61,193,227);
-        background: linear-gradient(90deg, rgba(61,193,227,1) 0%, rgba(165,68,98,1) 50.83%, rgba(214,59,233,1) 100%);
+        background: rgb(61, 193, 227);
+        background: linear-gradient(90deg, rgba(61, 193, 227, 1) 0%, rgba(165, 68, 98, 1) 50.83%, rgba(214, 59, 233, 1) 100%);
         border: none;
         letter-spacing: 2px;
     }
-
     /* about us  */
-    .about-us-banner{
+    .about-us-banner {
         /* background-image: url(../images/left-shape.png); */
         width: auto;
         height: 400px;
     }
-
-    .about-us-header, .bitcoin-information, .company-information{
+    .about-us-header,
+    .bitcoin-information,
+    .company-information {
         letter-spacing: 18%;
         font-size: 30px;
         font-weight: 900;
@@ -112,8 +299,7 @@ body{
         padding-top: 30px;
         color: #e2e4eb;
     }
-
-    .about-us{
+    .about-us {
         margin: 0 8%;
         margin-top: 40px;
         text-align: center;
@@ -121,16 +307,13 @@ body{
         font-size: 15px;
         letter-spacing: 1%;
     }
-
-    
-    .line-under{
+    .line-under {
         border: 2px solid #b7bace;
         width: 70px;
         margin: 10px 43%
     }
-
     /* how we work */
-    .thin-border{
+    .thin-border {
         position: absolute;
         border: 3px solid #c7badd;
         border-radius: 17px;
@@ -140,140 +323,109 @@ body{
         margin: 0 10%;
         /* margin-top: -20px; */
     }
-
-
     .how-we-work {
         background-color: #1E265B;
         padding: 20px 0;
         margin-top: 120px;
     }
-
-    .how-we-work-background{
-        background: rgb(65,71,118);
-        background: linear-gradient(142deg, rgba(65,71,118,1) 10%, rgba(138,142,172,1) 48%, rgba(30,38,91,1) 90%);
+    .how-we-work-background {
+        background: rgb(65, 71, 118);
+        background: linear-gradient(142deg, rgba(65, 71, 118, 1) 10%, rgba(138, 142, 172, 1) 48%, rgba(30, 38, 91, 1) 90%);
         width: 239px;
         height: 101px;
         margin: 0 10%;
         color: white;
     }
-
-    .services-padding{
+    .services-padding {
         margin-top: 70px;
     }
-
-    .service-header{
-        letter-spacing: 6px;    
+    .service-header {
+        letter-spacing: 6px;
         font-size: 16px;
         font-weight: 900;
         padding: 15% 0;
     }
-
-    .service-icon{
+    .service-icon {
         background-color: #e2e4eb;
         height: 132px;
         width: 132px;
         border-radius: 50%;
         margin: 0 35%;
     }
-
-    .service-images{
+    .service-images {
         width: 60.21px;
         height: auto;
         margin: 28% 28%;
     }
-
     .service-details {
         margin-bottom: 30px;
         color: #e2e4eb;
     }
-
     .main-service-header {
         font-size: 18px;
         font-weight: 900;
         letter-spacing: 2px;
         padding: 15px 0;
     }
-
-    .main-service-subheading{
+    .main-service-subheading {
         margin: 0 15%;
         font-size: 14px;
         letter-spacing: 1px;
         line-height: 180%;
         font-weight: 300;
     }
-
     /* stats */
-    .stats-outer-wrapper{
-     padding: 30px 0;   
+    .stats-outer-wrapper {
+        padding: 30px 0;
     }
-
-    .stats-container{
-        padding: 20px 0; 
+    .stats-container {
+        padding: 20px 0;
     }
     .stats-icon {
         width: 80px;
         height: auto;
         margin: 0 40%;
     }
-
     /* support */
-    .help{
+    .help {
         background-color: #D7293A;
         color: white;
         padding: 80px 0;
         /* filter: drop-shadow(0, 10px, 25px, black); */
         box-shadow: 0 10px 25px black;
     }
-
-    #support-email{
+    #support-email {
         font-size: 18px;
         font-weight: 400;
         letter-spacing: 4px;
     }
-
     /* btcoin-information */
-    .bitcoin-chart{
+    .bitcoin-chart {
         margin: 10px 0;
         width: 347px;
         height: 224px;
     }
-
     /* company-information */
-    .company-information-container{
+    .company-information-container {
         /* background-image: url('../images/right-shape.png'); */
         width: auto;
         height: 400px;
     }
-
-    .company-name, .company-number{
+    .company-name,
+    .company-number {
         color: #C5C6CC;
         font-size: 14px;
         font-weight: 200;
     }
-
-    .company-name > h3, .company-number > h3{
+    .company-name>h3,
+    .company-number>h3 {
         color: #88898D;
         font-size: 24px;
         font-weight: 500;
     }
-    .certificate-of-incorp{
-        background-color: grey;
-        padding: 30px;
-        margin: 0 20%;
-        height: 410px;
-        padding: 40% 0;
-    }
-    .certificate-of-incorp > h3 {
-        color: white;
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 6px;
-    }
-
-
     /* footer */
     /* footer */
-    footer{
+    footer {
         /* position: absolute; */
         background-color: #201c42;
         width: 100%;
@@ -282,70 +434,55 @@ body{
         color: #e2e4eb;
         margin: 1% 0;
     }
-
-    .footer-contact-section > h3 {
+    .footer-contact-section>h3 {
         font-size: 30px;
         text-transform: uppercase;
     }
-
-    .footer-contact-section > p {
+    .footer-contact-section>p {
         color: #7E7A7A;
         font-size: 15px;
     }
-        
-    .footer-contact-section > p > svg {
+    .footer-contact-section>p>svg {
         margin-right: 1%;
     }
-  
-
     .footer-img img {
         width: 100px;
         /* margin: 0 40%; */
     }
-
-    
     .footer-link a {
         color: white;
         text-decoration: none;
         margin-right: 20px;
         font-size: 18px
     }
-
     .footer-link a:hover {
         color: grey;
     }
-
-
     /* other styling */
-
     /* bootstrap navbar-fixed-top reset */
-    nav.navbar.navbar-default.navbar-fixed-top{
+    nav.navbar.navbar-default.navbar-fixed-top {
         background-color: #201c42;
     }
-
     /* crypto */
     .symbols {
         width: 12px;
     }
-
-    .chart-resize{
+    .chart-resize {
         width: 60px;
     }
-
     /* table */
-    .table{
+    .table {
         margin: 10px 0;
         margin-bottom: 30px;
     }
-
     /* support section extra styles */
     section h3 {
         font-weight: 900;
     }
 }
 
-@media only screen and (max-width: 400px){
-    .how-we-work-background{
+@media only screen and (max-width: 400px) {
+    .how-we-work-background {
         margin: 0 -3%;
     }
 }

@@ -15,13 +15,13 @@ from django.db import IntegrityError
 from django.db.models import Sum
 
 # forms
-from .forms import RegistrationForm, WithdrawalForm, CreditCardForm, DepositForm, ProfileForm, CreditCardForm
+from .forms import RegistrationForm, BankTransferForm, CreditCardForm, DepositForm, ProfileForm, CreditCardForm, BitcoinForm
 
 # registration token 
 from .token import account_activation_token
 
 # importing models 
-from .models import TradingHistory, Profile,WithdrawalBalance, TotalDeposit, TotalWithdrawal, Notification, Plans, Withdraw, Notification
+from .models import TradingHistory, Profile,WithdrawalBalance, TotalDeposit, TotalWithdrawal, Notification, Plans, BankTransfer, Notification
 
 # background task 
 # from background_task import background
@@ -282,16 +282,20 @@ def contact(request):
     return render(request, 'main/contact-us.html')
 
 
-# withdraw
+# withdrawal method
+@login_required(login_url='/login')
+def withdrawal_method(request):
+    return render(request, 'main/withdrawal-method.html')
+
+# banktransfer
 from django.contrib.auth.hashers import check_password
 
 @login_required(login_url='/login')
-def withdraw(request):
-    
+def bankTransfer(request): 
+    form = BankTransferForm(request.POST)
     userPassword = request.user.password
     if request.method == 'POST':
-        form = WithdrawalForm(request.POST)
-        messages.error(request, 'There was a problem with the withdrawal')
+        messages.error(request, 'There was a problem with the withdrawal contact support')
         
         if form.is_valid():
             form.save(commit=False)
@@ -309,13 +313,47 @@ def withdraw(request):
         else: 
             print('error')
     else:
-        form = WithdrawalForm()
+        form = BankTransferForm()
 
     context = {
         'form': form
     }
 
     return render(request, 'main/withdrawal.html', context )
+
+
+# bitcoin 
+@login_required(login_url='/login')
+def bitcoin(request):
+    
+    userPassword = request.user.password
+    if request.method == 'POST':
+        form = BitcoinForm(request.POST)
+        messages.error(request, 'There was a problem with the withdrawal contact support')
+        
+        if form.is_valid():
+            form.save(commit=False)
+            password = form.cleaned_data.get('password')
+
+            match_password = check_password(password, userPassword)
+            # messages.success(request, 'Withdraw Successful')
+            
+            if match_password:
+                print('passwords matched')
+                form.save()
+                return redirect('main:dashboard')
+            else:
+                print('problem with matching password')
+        else: 
+            print('error')
+    else:
+        form = BitcoinForm()
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'main/via-bitcoin.html', context )
 
 # deposit 
 @login_required(login_url='/login')

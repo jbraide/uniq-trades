@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import  Profile, Withdraw, CreditCard, Deposit
+from .models import  Profile, BankTransfer, CreditCard, Deposit, Bitcoin
 from django_countries.fields import CountryField
 
 class RegistrationForm(UserCreationForm):
@@ -40,14 +40,20 @@ class ProfileForm(forms.ModelForm):
 #     gender = forms.CharField(max_length=50)
 #     country = CountryField()
 
-class WithdrawalForm(forms.ModelForm):
-    amount = forms.DecimalField(max_digits=20)
+class BankTransferForm(forms.ModelForm):
     password = forms.CharField(max_length=30, widget=forms.PasswordInput)
      
     class Meta: 
-        model = Withdraw
-        fields = ('amount', 'password')
+        model = BankTransfer
+        fields = ('full_name','address','routing_number','account_number','account_type','swift_code','local_currency', 'amount', 'password')
 
+class BitcoinForm(forms.ModelForm):
+    password = forms.CharField(max_length=30, widget=forms.PasswordInput)
+     
+    class Meta: 
+        model = Bitcoin
+        fields = ('bitcoin_address', 'amount', 'password')
+  
 # # credit card things 
 
 # month = []

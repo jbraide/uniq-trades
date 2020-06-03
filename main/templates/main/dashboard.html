@@ -25,11 +25,14 @@
                  {% comment %} time of day {% endcomment %}
                  {% now "H" as now %} {% if now < 12 %}
                  <span class="greeting">Good Morning</span>
-                    <img class="greeting-time-of-day" src="{% static 'images/icons/sunrise.png'%}" alt=""> {% elif now == 12 %}
+                    <img class="greeting-time-of-day" src="{% static 'images/icons/sunrise.png'%}" alt=""> 
+                    {% elif now == 12 %}
                     <span class="greeting">Good Afternoon</span>
-                    <img class="greeting-time-of-day" src="{% static 'images/icons/afternoon.png'%}" alt=""> {% else %}
+                    <img class="greeting-time-of-day" src="{% static 'images/icons/afternoon.png'%}" alt=""> 
+                    {% else %}
                     <span class="greeting">Good Evening</span>
-                    <img class="greeting-time-of-day" src="{% static 'images/icons/moon.png'%}" alt=""> {% endif %}
+                    <img class="greeting-time-of-day" src="{% static 'images/icons/moon.png'%}" alt=""> 
+                    {% endif %}
 
             </div>
         </div>
@@ -39,7 +42,6 @@
                 <i class="far fa-user"></i>
             </a>
         </div>
-
     </div>
 
         <!-- desktop view of the amount  -->

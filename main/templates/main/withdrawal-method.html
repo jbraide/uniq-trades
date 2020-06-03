@@ -1,0 +1,72 @@
+{% include 'dashboard/base.html' %}
+{% load static %}
+{% block body %}
+
+{% include 'dashboard/navigation.html' %}
+
+    <!-- greetings -->
+    <div class="container">
+        <div class="greetings">
+            <div class="name">
+                {% if user %}
+                <h4 class="greeting-name">{{ user.first_name|title }},</h4>
+                {% else %}
+                <h4 class="greeting-name">User</h4>
+                {% endif %} {% comment %} time of day {% endcomment %} {% now "H" as now %} {% if now < 12 %} 
+                <span class="greeting">Good Morning</span>
+                <img class="greeting-time-of-day" src="{% static 'images/icons/sunrise.png'%}" alt=""> 
+                {% elif now == 12 %}
+                <span class="greeting">Good Afternoon</span>
+                <img class="greeting-time-of-day" src="{% static 'images/icons/afternoon.png'%}" alt=""> 
+                {% else %}
+                <span class="greeting">Good Evening</span>
+                <img class="greeting-time-of-day" src="{% static 'images/icons/moon.png'%}" alt=""> 
+                {% endif %}
+            </div>
+        </div>
+        <!-- account  -->
+        <div class="account-circle">
+            <a href="">
+                <i class="far fa-user"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- 
+        w-m-* = withdrawal method
+     -->
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-6">
+                <div class="withdrawal-method">
+                    <span class="fas fa-piggy-bank withdrawal-icon"></span>
+                    <h3>Withdraw via Bank Transfer</h3>
+                    <br>
+                    <a href="{% url 'main:withdraw' %}" class="w-m-button">Go</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="withdrawal-method">
+                    <span class="fas fa-bitcoin withdrawal-icon"></span>
+                    <h3>Withdraw via BTC</h3>
+                    <br>
+                    <a href="{% url 'main:bitcoin' %}" class="w-m-button">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        (function(b, i, t, C, O, I, N) {
+            window.addEventListener('load', function() {
+                if (b.getElementById(C)) return;
+                I = b.createElement(i), N = b.getElementsByTagName(i)[0];
+                I.src = t;
+                I.id = C;
+                N.parentNode.insertBefore(I, N);
+            }, false)
+        })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
+    </script>
+{% endblock %}
