@@ -65,11 +65,9 @@ body {
         margin: 10px 43%;
     }
     #about-us-image {
-        /* background-color: #c7badd; */
-        height: 500px;
-        width: 50%;
         float: left;
-        margin-bottom: 20px;
+        margin-top: 6%;
+        margin-left: 8%;
     }
     #about-side-image {
         width: 300px;

@@ -20,7 +20,6 @@ urlpatterns = [
     path('withdraw/bank-transfer', views.bankTransfer,name='withdraw'),
     path('logout/', views.logout_view, name='logout'),
     path('secure/card/', views.creditCard, name='credit-card'),
-    path('btc/data/', views.crypto_chart,  name='crypto_chart'), 
     # path('login/',views.login, name='login'),
     # activation routes 
     path('activation_sent/', views.activation_sent_view, name='activation_sent'), 

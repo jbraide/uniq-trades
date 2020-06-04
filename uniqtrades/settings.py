@@ -15,12 +15,9 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SECRET_KEY = os.environ['SECRET_KEY']
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z)m95!a3gdxiv3%qq5fx3ba85jzp=ryno(^lce+*pg97)c7^_3'
+# SECRET_KEY = 'z)m95!a3gdxiv3%qq5fx3ba85jzp=ryno(^lce+*pg97)c7^_3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,9 +77,9 @@ WSGI_APPLICATION = 'uniqtrades.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'trading',
-        'USER': 'trader1',
-        'PASSWORD': 'owatesproject',
+        'NAME': os.environ['db_name'],
+        'USER': os.environ['db_user'],
+        'PASSWORD': os.environ['db_password'],
         'HOST': 'localhost',
         'PORT': '',
     }
