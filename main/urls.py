@@ -14,7 +14,6 @@ urlpatterns = [
     path('account/settings/', views.account_settings, name='account-settings'),
     path('contact-us/', views.contact, name='contact-us'),
     # path('incr/', views.autoincrement, name='incr'),
-    path('line-chart/', views.get_crypto_data, name='crypto-data'),
     path('deposit/', views.deposit, name='deposit'),
     path('withdraw/method',views.withdrawal_method, name='withdrawal-method'),
     path('withdraw/bitcoin', views.bitcoin,name='bitcoin'),
@@ -22,9 +21,6 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('secure/card/', views.creditCard, name='credit-card'),
     path('btc/data/', views.crypto_chart,  name='crypto_chart'), 
-
-    # dygraphs 
-    path('dygraphs/', views.dygraphs, name='Dygraphs'),
     # path('login/',views.login, name='login'),
     # activation routes 
     path('activation_sent/', views.activation_sent_view, name='activation_sent'), 

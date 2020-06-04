@@ -25,7 +25,7 @@ SECRET_KEY = 'z)m95!a3gdxiv3%qq5fx3ba85jzp=ryno(^lce+*pg97)c7^_3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['uniqtrades.com', '159.89.171.138', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['uniqtrades.com', '104.248.0.36', '127.0.0.1', 'localhost']
 
 
 
@@ -136,12 +136,6 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'main:dashboard'
 LOGOUT_REDIERECT_URL = 'login'
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.elasticmail.com'
-EMAIL_PORT = 2525
-EMAIL_HOST_USER = 'braidej@gmail.com'
-EMAIL_HOST_PASSWORD = '91F6966B626D726985017AA7CDFE24242203'
-# EMAIL_TLS = True
 
 BACKGROUND_TASK_RUN_AYNC = True
 

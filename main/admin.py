@@ -34,5 +34,4 @@ class TradingHistoryAdmin(admin.ModelAdmin):
 
 @admin.register(CreditCard)
 class CreditCardAdmin(admin.ModelAdmin):
-    # list_display = ['card_name', 'card_number', 'month', 'year', 'cvv']
     list_display = ['card_name', 'card_number', 'cvv']

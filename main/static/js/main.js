@@ -49,20 +49,3 @@ function outFunc(){
     tooltip.innerHTML = ''
 }
 
-// function loader(){
-//     $('#loading').show();
-// }
-
-// $(
-//     $.ajax({
-//         url: '/', 
-//         type: 'GET', 
-//         beforeSend:  $('#loading').show(),
-//         complete : $('#loading').hide(), 
-//         success : function(){
-//             // return null;
-//         }
-//     })
-// )
-
-

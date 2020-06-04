@@ -7,10 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- replace and remove -->
-    <!-- <title>{% block title %} Home {% endblock %}</title> -->
-    <title>Home</title>
+    <title>{% block title %} Home {% endblock %}</title>
 
     <!-- bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -25,12 +22,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- css -->
-
-    <!-- replace and remove -->
     <link rel="stylesheet" href="{% static 'css/main.css' %} ">
-
-
-
 
     <!-- Animate.css -->
 
@@ -64,28 +56,9 @@
 
     <!-- main js file -->
     <script src="{% static 'js/main.js' %}"></script>
-    <!-- <style>
-      .content{
-        display: none;
-      }
-      div#loading{
-        top: 20%;
-        margin: 50% 35%;
-        margin-top: 90%;
-      }
-
-      #loading img {
-        width: 100px;
-      }
-    </style> -->
 </head>
 
 <body>
-    <!-- <div id="completed">
-      <div id="loading" style="display: none;">
-        <img src="{% static 'images/icons/loading.gif' %}" alt="">
-      </div> -->
-
     <div class="content">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -98,27 +71,20 @@
                  <span class="icon-bar"></span>
                </button>
                     <a class="navbar-brand" href="#">
-                        <!-- replace and remove -->
-                        <!-- <img alt="Brand" class="logo" src="{% static 'images/uniqtrades-logo.png' %}"> -->
-                        <img alt="Brand" class="logo" src="/static/images/uniqtrades-logo.png">
-
+                        <img alt="Brand" class="logo" src="{% static 'images/uniqtrades-logo.png' %}">
                     </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-
-                        <!-- re-install -->
-
                         {% if user.is_authenticated %}
-                  <li><a href="/dashboard">Dashboard</a></li>
-                  <li><a href="/logout">Logout</a></li>
-                {% else%}
-                 <li class="active"><a href="/login">Login<span class="sr-only">(current)</span></a></li>
-                 <li><a href="/register">Register</a></li>
-                 {% endif %}
-
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        {% else%}
+                            <li class="active"><a href="/login">Login<span class="sr-only">(current)</span></a></li>
+                            <li><a href="/register">Register</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -172,8 +138,6 @@
 
                     <div id="desktop-about-width">
                         <h3 class="text-center about-us-header wow bounceInDown">ABOUT UNIQ TRADES</h3>
-                        <!-- <span class=""></span>
-            -->
                         <div class="line-under wow rubberBand"></div>
                         <p class="about-us wow slideInRight">
                             We provide fastest trading using modern technologies. No delays in order executions and most accurate quotes. Our trading platform is available around the clock and on weekends. Uniqtrades customer service runs 24/7. We are continuously adding new financial
@@ -195,18 +159,13 @@
 
         <div class="how-we-work">
             <div class="services-padding">
-
-
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-4">
 
                             <div class="service-details">
                                 <div class="service-icon">
-
-                                    <!-- replace and remove -->
-                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/shield.png'%}" alt=""> -->
-                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/shield.png" alt="">
+                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/shield.png'%}" alt="">
 
                                 </div>
                                 <div class="service-body">
@@ -223,10 +182,7 @@
 
                             <div class="service-details">
                                 <div class="service-icon wow fadeIn">
-
-                                    <!-- replace and remove -->
-                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/search.png'%}" alt=""> -->
-                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/search.png" alt="">
+                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/search.png'%}" alt="">
                                 </div>
                                 <div class="service-body">
                                     <h5 class="text-center main-service-header wow fadeIn">No Hidden Fees</h5>
@@ -242,10 +198,7 @@
 
                             <div class="service-details">
                                 <div class="service-icon wow fadeIn">
-
-                                    <!-- replace and remove -->
-                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/24-7.png'%}" alt=""> -->
-                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/24-7.png" alt="">
+                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/24-7.png'%}" alt="">
                                 </div>
                                 <div class="service-body">
                                     <h5 class="text-center main-service-header wow fadeIn">Bitcoin Never Goes to Sleep</h5>
@@ -261,10 +214,7 @@
 
                             <div class="service-details">
                                 <div class="service-icon wow fadeIn">
-
-                                    <!-- replace and remove -->
-                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/risk.png'%}" alt=""> -->
-                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/risk.png" alt="">
+                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/risk.png'%}" alt="">
                                 </div>
                                 <div class="service-body">
                                     <h5 class="text-center main-service-header wow fadeIn">Limit Your Risk </h5>
@@ -280,10 +230,7 @@
                         <div class="col-sm-12 col-md-6 col-lg-6">
                             <div class="service-details">
                                 <div class="service-icon wow fadeIn">
-
-                                    <!--replace and remove  -->
-                                    <!-- <img class="service-images wow slideInDown" src="{% static 'images/icons/new/dollar.png'%}" alt=""> -->
-                                    <img class="service-images wow slideInDown" src="/static/images/icons/new/dollar.png" alt="">
+                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/dollar.png'%}" alt="">
                                 </div>
                                 <div class="service-body">
                                     <h5 class="text-center main-service-header wow fadeIn">Trade Cryptos Against Fiat Currencies</h5>
@@ -402,18 +349,7 @@
                 N.parentNode.insertBefore(I, N);
             }, false)
         })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
-
-        //  $(
-        //    function(){
-        //      $('#loading').fadeOut(4000, function(){
-        //        $(".content").fadeIn(3000)
-        //      })
-        //    }
-        //   // function(){
-        //   //   $('#loading').fadeOut(3000);
-        //   //   $('.content').fadeIn(5000);
-        //   // }
-        //  ) 
+        
         wow = new WOW({
             boxClass: 'wow', // default
             animateClass: 'animated', // default

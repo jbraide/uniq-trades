@@ -146,77 +146,6 @@ def dashboard(request):
     }
     return render(request, 'main/dashboard.html', context)
 
-
-# line chart
-
-from django.http import JsonResponse
-
-def crypto_chart(request):
-    # data = []
-    data = ''
-
-
-    time.sleep(1)
-    api_url = 'https://api.alternative.me/v2/ticker/?limit=10/?convert=USD'
-    # response
-    response = requests.get(api_url)
-    response_json = response.json()
-
-    btc_price = response_json['data']['1']['quotes']['USD']['price']
-    symbol = response_json['data']['1']['symbol']
-    last_updated = response_json['data']['1']['last_updated']
-
-    last_updated = int(last_updated)
-    last_updated = datetime.utcfromtimestamp(last_updated).strftime('%H:%M:%S')
-
-    # generates altered version of price for more effect on chart
-    btc_price = int(btc_price) + randint(50, 100)
-
-    
-    info = {
-        "price": btc_price,
-        "time": last_updated
-    }
-
-    data = info
-    
-    return JsonResponse(
-        data, safe=False
-        )
-    # return data
-
-# dygraphs on charts 
-def dygraphs(request):
-    data = []
-    API_URL = 'https://cex.io/api/ticker/BTC/USD'
-    api_data = requests.get(API_URL)
-    data_json = api_data.json()
-
-    price = float(data_json['last'])
-    price = int(price)
-    time_stamp = int(data_json['timestamp'])
-    # time_stamp = datetime.fromtimestamp(time_stamp)
-    # time_stamp.replace('T', ' ')
-    # print(time_stamp)
-    data.append([time_stamp, price])
-    # data.append(time_stamp)
-    
-
-    return JsonResponse(data, safe=False)
-    
-
-# 5 crypto currencies on the home page
-def get_crypto_data():
-    api_url = 'https://api.alternative.me/v2/ticker/?limit=10/?convert=USD'
-
-    try:
-        data = requests.get(api_url).json()
-        print(data)    
-    except Exception as e:
-        print(e)
-        data = dict()
-    return data
-
 # charts
 
 import json
@@ -228,8 +157,6 @@ def charts(request):
     # trading history filter
     user = request.user
     history = TradingHistory.objects.all().filter(user=user).order_by('-transaction_date')
-
-
 
     context = {
         'history': history,

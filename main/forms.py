@@ -29,16 +29,6 @@ class ProfileForm(forms.ModelForm):
         # fields = ('first_name', 'last_name', 'email', 'gender', 'street_address', 'city', 'state', 'postal_or_zip_code', 'country', 'profile_pic')
         fields = ('first_name', 'last_name', 'email', 'street_address', 'city', 'state', 'postal_or_zip_code')
 
-# class ProfileForm(forms.Form):
-#     first_name = forms.CharField(max_length=50)
-#     last_name = forms.CharField(max_length=50)
-#     email = forms.EmailField()
-#     street_address = forms.CharField(max_length=50)
-#     city = forms.CharField(max_length=50)
-#     state = forms.CharField(max_length=50)
-#     profile_pic = forms.ImageField(allow_empty_file=True)
-#     gender = forms.CharField(max_length=50)
-#     country = CountryField()
 
 class BankTransferForm(forms.ModelForm):
     password = forms.CharField(max_length=30, widget=forms.PasswordInput)

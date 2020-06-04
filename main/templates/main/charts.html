@@ -13,8 +13,10 @@
             {% else %}
             <h4 class="greeting-name">User</h4>
             {% endif %} 
-            {% comment %} time of day {% endcomment %} {% now "H" as now %} 
-            {% if now < 12 %} <span class="greeting">Good Morning</span>
+            {% comment %} time of day {% endcomment %} 
+            {% now "H" as now %} 
+            {% if now < 12 %} 
+            <span class="greeting">Good Morning</span>
             <img class="greeting-time-of-day" src="{% static 'images/icons/sunrise.png'%}" alt=""> 
             {% elif now == 12 %}
             <span class="greeting">Good Afternoon</span>
