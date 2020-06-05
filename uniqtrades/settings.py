@@ -76,10 +76,16 @@ WSGI_APPLICATION = 'uniqtrades.wsgi.application'
 
 DATABASES = {
     'default': {
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'trading',
+        # 'USER': 'trader1',
+        # 'PASSWORD': 'owatesproject',
+        # 'HOST': 'localhost',
+        # 'PORT': '',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'trading',
-        'USER': 'trader1',
-        'PASSWORD': 'owatesproject',
+        'NAME': ['db_name'],
+        'USER': ['db_user'],
+        'PASSWORD': ['db_password'],
         'HOST': 'localhost',
         'PORT': '',
     }
