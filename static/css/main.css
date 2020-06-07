@@ -50,14 +50,17 @@ body {
         line-height: 150%;
         font-weight: bold;
     }
-    .button-call-to-action {
-        margin-top: 4%;
-    }
-    .button-call-to-action>button {
+    .button-call-to-action > a {
         padding: 15px 100px;
-        background: linear-gradient(90deg, rgba(61, 193, 227, 1) 0%, rgba(165, 68, 98, 1) 50.83%, rgba(214, 59, 233, 1) 100%);
+        background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%);
         border: none;
+        position: absolute;
+        top: 70%;
+        left: 6%;
+        z-index: 11;
+        color: white
     }
+
     /* about us */
     .line-under {
         border: 2px solid #b7bace;
@@ -65,11 +68,9 @@ body {
         margin: 10px 43%;
     }
     #about-us-image {
-        /* background-color: #c7badd; */
-        height: 500px;
-        width: 50%;
         float: left;
-        margin-bottom: 20px;
+        margin-top: 6%;
+        margin-left: 8%;
     }
     #about-side-image {
         width: 300px;
@@ -273,15 +274,15 @@ body {
         margin: 15px 0;
         margin-right: 150px;
     }
-    .button-call-to-action>button {
-        position: absolute;
-        top: 300px;
-        margin-right: 150px;
+    .button-call-to-action > a {
         padding: 15px 100px;
-        background: rgb(61, 193, 227);
-        background: linear-gradient(90deg, rgba(61, 193, 227, 1) 0%, rgba(165, 68, 98, 1) 50.83%, rgba(214, 59, 233, 1) 100%);
+        background-image: linear-gradient(to right, #FF8008 0%, #FFC837 51%, #FF8008 100%);
         border: none;
-        letter-spacing: 2px;
+        position: absolute;
+        top: 70%;
+        left: 10%;
+        z-index: 11;
+        color: white
     }
     /* about us  */
     .about-us-banner {

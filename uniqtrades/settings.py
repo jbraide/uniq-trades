@@ -18,7 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['uniqtrades.com', '104.248.0.36', '127.0.0.1', 'localhost']
 
@@ -75,9 +76,9 @@ WSGI_APPLICATION = 'uniqtrades.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': ['db_name'],
-        'USER': ['db_user'],
-        'PASSWORD': ['db_password'],
+        'NAME': os.environ['db_name'],
+        'USER': os.environ['db_user'],
+        'PASSWORD': os.environ['db_password'],
         'HOST': 'localhost',
         'PORT': '',
     }
