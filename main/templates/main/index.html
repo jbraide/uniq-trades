@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %} Home {% endblock %}</title>
+    <title>{% block title %} UniqTrades | Home {% endblock %}</title>
 
     <!-- bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -60,6 +60,50 @@
 </head>
 
 <body>
+    <!-- top header -->
+    <div class="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-xs-6 header-padding">
+                    <span class="fas fa-phone-alt"></span> +1 (480) 361-5311 
+                </div>                
+                <div class="col-lg-2 col-xs-6 header-padding">
+                    <span class="fas fa-envelope"></span> support@uniqtrades
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                {% if user.is_authenticated %}
+                <div class="col-lg-1 col-xs-6 header-padding">
+                    <span class="fas fa-lock"></span>
+                    <a href="/dashboard">
+                      Dashboard
+                    </a>
+                </div>
+                <div class="col-lg-2 col-xs-6 header-padding">
+                    <span class="fas fa-user-lock"></span>
+                    <a href="/logout">Logout</a>
+                </div>
+                {% else %}
+                <div class="col-lg-1 col-xs-6 header-padding">
+                    <span class="fas fa-lock"></span>
+                    <a href="/login">
+                      Login
+                    </a>
+                </div>
+                <div class="col-lg-2 col-xs-6 header-padding">
+                    <span class="fas fa-user-lock"></span>
+                    <a href="/register">Register</a>
+                </div>
+
+                {% endif %}
+            </div>
+        </div>
+       
+    </div>
+
     <div class="content">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -79,13 +123,12 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        {% if user.is_authenticated %}
-                            <li><a href="/dashboard">Dashboard</a></li>
-                            <li><a href="/logout">Logout</a></li>
-                        {% else%}
-                            <li class="active"><a href="/login">Login<span class="sr-only">(current)</span></a></li>
-                            <li><a href="/register">Register</a></li>
-                        {% endif %}
+                        <li>
+                            <a href="">About Us</a>
+                        </li>
+                        <li>
+                            <a href="">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -107,6 +150,9 @@
                 
             <div class="left-col" id="left-col">
                 <div id="left-slider"></div>
+            </div>
+            <div class="extra-info">
+                    <h3>TRADE STOCKS,<br/> CRUDE OIL,<br/> MARIJUANA <br/>AND LOTS MORE</h3>
             </div>
             <ul>
                 <!-- <li class="slide-up">
@@ -131,7 +177,7 @@
         </div>
 
         <!-- *-f-r # float right -->
-        <div class="wow bounceInRight desktop-f-r">
+        <div class="wow bounceInRight desktop-f-r parallax">
             <div class="about-us-banner">
                 <div class="about-us-inner-margin">
 
@@ -338,6 +384,7 @@
             <!-- end of footer -->
         </div>
     </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script> -->
     <script>
         (function(b, i, t, C, O, I, N) {
             window.addEventListener('load', function() {

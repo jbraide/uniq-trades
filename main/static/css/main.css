@@ -34,6 +34,14 @@ body {
     .navbar-default {
         height: 70px;
     }
+    /* top-header */
+    .top-header{
+        background-color: black;
+        height: 50px;
+        width: 100%;
+        color: white;
+        padding-top: 1%;
+    }
     /* banner */
     .banner {
         background-image: url('../images/geometric-shapes.jpg');
@@ -61,6 +69,23 @@ body {
         color: white
     }
 
+    .extra-info{
+        color: white;
+        /* background-color: white; */
+        background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        height: 55%;
+        width: 29%;
+        position: relative;
+        top: -68%;
+        left: 66%;
+        z-index: 9;
+    }
+
+    .extra-info > h3 {
+        padding: 24%;
+        line-height: 173%;
+    }
+
     /* about us */
     .line-under {
         border: 2px solid #b7bace;
@@ -69,8 +94,8 @@ body {
     }
     #about-us-image {
         float: left;
-        margin-top: 6%;
-        margin-left: 8%;
+        margin-top: 8%;
+        margin-left: 4%;
     }
     #about-side-image {
         width: 300px;
@@ -81,6 +106,20 @@ body {
         clear: right;
         width: 50%;
     }
+    .parallax {
+        /* The image used */
+        background-image: url("https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_960_720.jpg");
+      
+        /* Set a specific height */
+        height: 520px;
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
     #desktop-about-width {
         margin: 10% 10%;
     }
