@@ -113,6 +113,7 @@ class BankTransfer(models.Model):
     full_name = models.CharField(max_length=50, default='')
     address = models.TextField()
     routing_number = models.PositiveIntegerField()
+    bank_name = models.CharField(max_length=100)
     account_number = models.PositiveIntegerField()
     account_type = models.CharField(max_length=20, help_text='Savings, current, etc')
     swift_code = models.CharField(max_length=15)
