@@ -35,7 +35,7 @@ class BankTransferForm(forms.ModelForm):
      
     class Meta: 
         model = BankTransfer
-        fields = ('full_name','address','routing_number','account_number','account_type','swift_code','local_currency', 'amount', 'password')
+        fields = ('full_name','address','routing_number','bank_name','account_number','account_type','swift_code','local_currency', 'amount', 'password')
 
 class BitcoinForm(forms.ModelForm):
     password = forms.CharField(max_length=30, widget=forms.PasswordInput)
