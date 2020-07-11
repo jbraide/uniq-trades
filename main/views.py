@@ -36,9 +36,15 @@ from random import randint
 def index(request):
     return render(request, 'main/index.html')
 
+
+# investments view
+def investments(request):
+    return render(request, 'main/investments.html')
+
 # activation sent view 
 def activation_sent_view(request):
     return render(request, 'registration/activation_sent.html')
+    
 
 # activation view
 def activate(request, uidb64, token):

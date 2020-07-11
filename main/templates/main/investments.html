@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- replace and remove -->
+    <title>{% block title %} Invest In {% endblock %}</title>
+
+    <!-- bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- css -->
+
+    <!-- replace and remove -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %} ">
+
+
+    <!-- Animate.css -->
+
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'css/animate.css' %} "> -->
+
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.min.css">
+
+    <!-- wowjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+
+
+    <!-- chatapp -->
+    <!--Start of Tawk.to Script-->
+    
+    <!--End of Tawk.to Script-->
+
+    <!-- main js file -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <link rel="stylesheet" href="../../static/css/slider.css">
+</head>
+<body>
+    <div class="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-xs-6 header-padding">
+                    <span class="fas fa-phone-alt"></span> +1 (480) 361-5311 
+                </div>                
+                <div class="col-lg-2 col-xs-6 header-padding">
+                    <span class="fas fa-envelope"></span> support@uniqtrades
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1 col-xs-6 header-padding">
+                    <span class="fas fa-lock"></span>
+                    <a href="">
+                      Login
+                    </a>
+                </div>
+                <div class="col-lg-2 col-xs-6 header-padding">
+                    <span class="fas fa-user-lock"></span>
+                    <a href="">Register</a>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="content">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+               </button>
+                    <a class="navbar-brand" href="#">
+                        <!-- replace and remove -->
+                        <!-- <img alt="Brand" class="logo" src="{% static 'images/uniqtrades-logo.png' %}"> -->
+                        <img alt="Brand" class="logo" src="/static/images/uniqtrades-logo.png">
+
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <!-- re-install -->
+
+                        <!-- {% if user.is_authenticated %}
+                  <li><a href="/dashboard">Dashboard</a></li>
+                  <li><a href="/logout">Logout</a></li>
+                {% else%}
+                 <li class="active"><a href="/login">Login<span class="sr-only">(current)</span></a></li>
+                 <li><a href="/register">Register</a></li>
+                 {% endif %} -->
+
+                        <!-- remove -->
+                        
+                        <li>
+                            <a href="">About Us</a>
+                        </li>
+                        <li>
+                            <a href="">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <div class="invetstment-section">
+            <div id="investment-image">
+                <div id="investment-header-container">
+                    <h3 class="text-center investment-header">Grow More Money With Our Investment Options</h3>
+                </div>
+            </div>
+        </div>
+        <div class="investment-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="{% static 'images/green-and-brown-plant-in-close-up-photography-4543137.jpg' %}" alt="">
+                    </div>
+                    <div class="col-lg-9">
+                        <h3 class="invest-in">Marijuana</h3>
+                        <div class="investment-content">
+                            <p>The marijuana industry is expected to triple in the next five years -- and many investors are looking to profit. </p>
+
+                            <p> As states and entire countries decriminalize or legalize cannabis and/or its components, there are loads of opportunities for entrepreneurs and existing companies.</p>
+                                
+                            <p>But as in any nascent industry, there are also loads of risks and bad actors. Whether you're a first-time investor or a seasoned veteran, it pays to understand all of the moving parts.</p>
+                            <a href="/register" class="btn btn-primary invest-button">Invest Now !</a>
+                        </div>                            
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img src="{% static 'images/gray-industrial-machine-during-golden-hour-162568.jpg' %}" alt="" class="crude-oil">
+                    </div>
+                    <div class="col-lg-7">
+                        <h3 class="invest-in ">Crude Oil</h3>
+                        <div class="investment-content">
+                            <p>Crude oil, also known as petroleum, is a liquid found in the Earth and it is made of hydrocarbons, organic compounds, and tiny amounts of metal. 
+                                <p>There are many types of crude produced around the world and the quality characteristics are reflected in the value. The most important characteristic is the sulfur content, which can be defined as sweet or sour, and density ranges from heavy to light. </p>
+                                <p>The higher priced crudes are usually light (lower density) and sweet (low sulfur amounts). It is less expensive to produce , such as  and diesel, using a light sweet crude oil. These grades are wanted more since they can be processed with refineries requiring less energy.</p>
+
+                            <a href="/register" class="btn btn-primary invest-button">Invest Now !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+    
+    wow = new WOW({
+        boxClass: 'wow', // default
+        animateClass: 'animated', // default
+        offset: 0, // default
+        mobile: true, // default
+        live: true // default
+    });
+    wow.init()
+</script>
+</body>
+
+</html>
