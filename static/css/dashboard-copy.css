@@ -4,6 +4,7 @@ body {
 }
 
 
+
 /* import fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
@@ -25,7 +26,7 @@ body {
     }
     .login-registration-s-l>img {
         width: 100%;
-        height: 711px;
+        height: 630px;
     }
     .login-reg-r {
         float: right;
@@ -97,7 +98,6 @@ body {
         font-weight: 400;
         color: #e2e4eb;
     }
-    
     /* sidebar */
     /*Allow main to be next to Nav*/
     .main {
@@ -334,11 +334,7 @@ body {
         font-weight: 500;
     }
 
-    .fa-user {
-        font-size: 30px;
-        color: black;
-        margin: 20% 25%;
-    }
+
     /* withdrawal method */
 
 
@@ -355,6 +351,7 @@ body {
         padding: 3% 8%;
         color: white;
     }
+
 
 }
 
@@ -839,23 +836,23 @@ body {
         margin: 40% 0;
     }
 
-       /* withdrawal method */
+        /* withdrawal method */
 
 
-       .withdrawal-method {
-        background-color: #ff9e22;
-        padding: 16%;
-        margin: 15% 0;
-    }
+        .withdrawal-method {
+            background-color: #ff9e22;
+            padding: 16%;
+            margin: 15% 0;
+        }
 
-    .withdrawal-icon {
-        font-size: 250%;
-    }
-    .w-m-button {
-        background-color: #009934;
-        padding: 3% 8%;
-        color: white;
-    }
+        .withdrawal-icon {
+            font-size: 250%;
+        }
+        .w-m-button {
+            background-color: #009934;
+            padding: 3% 8%;
+            color: white;
+        }
 }
 
 @media only screen and (max-width: 400px) {

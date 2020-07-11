@@ -85,6 +85,15 @@ body {
         line-height: 173%;
     }
 
+    .extra-info > .btn-primary {
+        border-radius: 0;
+        background-color: #ff0d00;
+        margin-top: -35%;
+        margin-left: 29%;
+        padding: 3% 10%;
+    }
+
+    
     /* about us */
     .line-under {
         border: 2px solid #b7bace;
@@ -105,18 +114,29 @@ body {
         clear: right;
         width: 50%;
     }
+
+    .background-right {
+        background-color: #6f042b;
+        margin-top: 4%;
+        margin-right: 4%;
+        -webkit-box-shadow: 22px 27px 31px 9px rgba(0,0,0,0.43);
+    -moz-box-shadow: 22px 27px 31px 9px rgba(0,0,0,0.43);
+    box-shadow: 22px 27px 31px 9px rgba(0,0,0,0.43);
+
+    }
     .parallax {
         /* The image used */
         background-image: url("https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_960_720.jpg");
       
         /* Set a specific height */
-        height: 520px;
+        height: 600px;
       
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        margin-top: -3%;
       }
 
     #desktop-about-width {
@@ -263,6 +283,57 @@ body {
         font-size: 24px;
         font-weight: 500;
     }
+
+    /* testimonials */
+    .testimonial-parallax{
+        /* The image used */
+        background-image: url("../images/architecture-buildings-business-city-290595.jpg");
+      
+        /* Set a specific height */
+        height: 400px;
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 4%;
+        box-shadow: 0 3000px rgb(105,105,105,  0.8) inset;
+    }
+
+    .testimonial-header {
+        background-color: black;
+        color: white;
+        padding: 1% 10%;
+    }
+
+    .testimonial-body {
+        margin: 2% 0;
+    }
+
+    .testimonial-header > h3 {
+        text-transform: uppercase;
+    }
+
+    .testifier-image > img {
+        border-radius: 50%;
+        width: 158px;
+        height: 158px;
+    }
+
+    .testifier-full-name {
+        font-size: 160%;
+        text-transform: uppercase;
+        margin: 5% 0;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
+    .testifier-message > p {
+        font-size: 95%;
+        font-weight: 300;
+    }
+    /* footer */
     footer {
         background-color: #201c42;
         width: 100%;
@@ -293,6 +364,64 @@ body {
     }
     .footer-link a:hover {
         color: grey;
+    }
+
+    /* investment page */
+    #investment-image {
+        background: url('../images/abundance-bank-bank-notes-banking-259249.jpg');
+        /* background: url('https://pixabay.com/get/57e6d6464a5bb114fedc8d74c52a3663143ad7e65454784e722b.jpg'); */
+        /* width: 100%; */
+        height: 180px;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 3000px rgb(105,105,105,  0.8) inset;
+    }
+
+    #investment-header-container {
+        width: 40%;
+        height: 80px;
+        padding-top: 4%; 
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+
+    .investment-body, .investment-body > .container > .row {
+        margin: 3% 0;
+    }
+
+    .invest-in {
+        font-size:  250%;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 3%;
+    }
+
+    .investment-content > p {
+        font-size: 120%;
+        line-height: 33px;
+        font-weight: 200;
+    }
+
+    .crude-oil {
+        height: 100vh;
+    }
+
+    .invest-button {
+        background-color: white !important;
+        color: white;
+        padding: 3% 8%;
+        font-size: 15px;
+        border-radius: 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 4%;
+    }
+
+    .invest-button:hover {
+        background-color: grey;
+        color: white;
     }
 }
 
@@ -581,6 +710,8 @@ body {
         font-size: 24px;
         font-weight: 500;
     }
+
+    
     /* footer */
     /* footer */
     footer {
@@ -636,6 +767,57 @@ body {
     /* support section extra styles */
     section h3 {
         font-weight: 900;
+    }
+
+    #investment-image {
+        background: url('../images/abundance-bank-bank-notes-banking-259249.jpg');
+        /* background: url('https://pixabay.com/get/57e6d6464a5bb114fedc8d74c52a3663143ad7e65454784e722b.jpg'); */
+        /* width: 100%; */
+        height: 180px;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 3000px rgb(105,105,105,  0.8) inset;
+    }
+
+    #investment-header-container {
+        padding: 0 7%;
+        padding-top: 9%;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+
+    .investment-body, .investment-body > .container > .row {
+        margin: 3% 0;
+    }
+
+    .invest-in {
+        font-size:  250%;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 7% 0;
+    }
+
+    .investment-content > p {
+        font-size: 105%;
+        font-weight: 200;
+    }
+
+    .invest-button {
+        background-color: white !important;
+        color: white;
+        padding: 3% 8%;
+        font-size: 15px;
+        border-radius: 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 8% 18%;
+    }
+
+    .invest-button:hover {
+        background-color: grey;
+        color: white;
     }
 }
 
