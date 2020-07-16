@@ -60,8 +60,7 @@
     </script>
     <!--End of Tawk.to Script-->
 
-    <!-- main js file -->
-    <script src="{% static 'js/main.js' %}"></script>
+    
 </head>
 
 <body>
@@ -708,27 +707,9 @@
             <!-- end of footer -->
         </div>
     </div>
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- owl carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            margin: 10, 
-            loop: true, 
-            responsiveClass: true,
-            responsive: {
-                0:{
-                    items: 1
-                }
-            },
-            autoplay:true,
-            autoplayTimeout:5000,
-            autoplayHoverPause:true
-        });
-        });
-    </script>
+    
+    <!-- main js file -->
+    <script src="{% static 'js/main.js' %}"></script>
     <script>
         (function(b, i, t, C, O, I, N) {
             window.addEventListener('load', function() {
@@ -888,6 +869,29 @@
         }
   
     </script>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            margin: 10, 
+            loop: true, 
+            responsiveClass: true,
+            responsive: {
+                0:{
+                    items: 1
+                }
+            },
+            autoplay:true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true
+        });
+        });
+    </script>
+
 </body>
 
 </html>
