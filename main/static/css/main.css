@@ -116,8 +116,8 @@ body {
     }
 
     .background-right {
-        background-color: #6f042b;
-        margin-top: 4%;
+        background-color: rgba(2,44,67,1);
+        /* background: linear-gradient(230deg, #ed6363 16%, rgba(2,44,67,1) 65%); */        margin-top: 4%;
         margin-right: 4%;
         -webkit-box-shadow: 22px 27px 31px 9px rgba(0,0,0,0.43);
     -moz-box-shadow: 22px 27px 31px 9px rgba(0,0,0,0.43);
@@ -125,19 +125,10 @@ body {
 
     }
     .parallax {
-        /* The image used */
-        background-image: url("https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_960_720.jpg");
-      
-        /* Set a specific height */
+        background: linear-gradient(120deg, rgba(41,199,172,1) 7%, rgba(132,20,45,1) 33%, rgba(132,20,45,1) 54%, rgba(84,18,59,1) 81%);
         height: 600px;
-      
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         margin-top: -3%;
-      }
+    }
 
     #desktop-about-width {
         margin: 10% 10%;
