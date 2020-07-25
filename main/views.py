@@ -138,7 +138,8 @@ def dashboard(request):
 
     # balance
     balance = WithdrawalBalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
-    total_deposits = TotalDeposit.objects.all()
+    total_deposits = TotalDeposit.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    # total_deposits = TotalDeposit.objects.all()
     total_withdrawals = TotalWithdrawal.objects.all()
 
     # Notification
