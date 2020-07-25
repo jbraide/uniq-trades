@@ -73,7 +73,7 @@
                                 <div class="amount-container">
                                     <span class="total-deposits">Total Deposits</span> 
                                     {% if total_deposit %}
-                                    <h4>{{ total_deposit.amount }}</h4>
+                                    <h4>$ {{ total_deposit.amount }}</h4>
                                     {% else %}
                                     <h4>$ 0.00 </h4>
                                     {% endif %}
@@ -125,8 +125,8 @@
                         <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
                         <div class="amount-container">
                             <span class="total-deposits">Total Deposits</span>
-                            {% if total_deposit %}
-                        <h4>{{ total_deposit.amount }}</h4>        
+                             {% if total_deposit %}
+                        <h4>$ {{ total_deposit.amount }}</h4>        
                     {% else %}
                         <h4>$ 0.00 </h4>        
                     {% endif %}    

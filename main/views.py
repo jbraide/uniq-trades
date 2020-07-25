@@ -147,7 +147,7 @@ def dashboard(request):
 
     context = {
         'balance': balance, 
-        'total_deposits': total_deposits, 
+        'total_deposit': total_deposits, 
         'total_withdrawals': total_withdrawals, 
         'notification': notification, 
     }
