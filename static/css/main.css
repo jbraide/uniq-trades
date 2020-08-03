@@ -117,19 +117,21 @@ body {
 
     .background-right {
         background-color: rgba(2,44,67,1);
-        /* background: linear-gradient(230deg, #ed6363 16%, rgba(2,44,67,1) 65%); */        margin-top: 4%;
+        /* background: linear-gradient(230deg, #ed6363 16%, rgba(2,44,67,1) 65%); */
+        margin-top: 4%;
         margin-right: 4%;
         -webkit-box-shadow: 22px 27px 31px 9px rgba(0,0,0,0.43);
     -moz-box-shadow: 22px 27px 31px 9px rgba(0,0,0,0.43);
     box-shadow: 22px 27px 31px 9px rgba(0,0,0,0.43);
 
     }
+    
+
     .parallax {
         background: linear-gradient(120deg, rgba(41,199,172,1) 7%, rgba(132,20,45,1) 33%, rgba(132,20,45,1) 54%, rgba(84,18,59,1) 81%);
         height: 600px;
         margin-top: -3%;
     }
-
     #desktop-about-width {
         margin: 10% 10%;
     }
@@ -424,6 +426,10 @@ body {
     .invest-button:hover {
         background-color: grey;
         color: white;
+    }
+
+    .mobile {
+        display: none;
     }
 }
 
@@ -880,6 +886,10 @@ body {
     .invest-button:hover {
         background-color: grey;
         color: white;
+    }
+
+    .desktop {
+        display: none;
     }
 }
 
