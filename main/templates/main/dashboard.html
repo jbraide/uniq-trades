@@ -1,5 +1,4 @@
 {% include 'dashboard/base.html' %}
-{% block title %}Dashboard{% endblock %}
 {% load static %} 
 {% block body %}
 <!-- Navigation -->
@@ -12,6 +11,42 @@
 <div class="content-f-r">
     <!-- greetings -->
     <div class="container">
+
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "proName": "FOREXCOM:SPXUSD",
+        "title": "S&P 500"
+      },
+      {
+        "proName": "FOREXCOM:NSXUSD",
+        "title": "Nasdaq 100"
+      },
+      {
+        "proName": "FX_IDC:EURUSD",
+        "title": "EUR/USD"
+      },
+      {
+        "proName": "BITSTAMP:BTCUSD",
+        "title": "BTC/USD"
+      },
+      {
+        "proName": "BITSTAMP:ETHUSD",
+        "title": "ETH/USD"
+      }
+    ],
+    "colorTheme": "light",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "en"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
         <div class="greetings">
 
             <!-- reinstall -->
@@ -97,6 +132,57 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="money-info item">
+                            <div class="current-balance-background">
+                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+
+                                <!-- remove -->
+                                <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
+                                <div class="amount-container">
+                                    <span class="current-balance">Marijuana Investment</span>
+                                     {% if marijuana %}
+                                    <h4>$ {{ marijuana.amount }}</h4>
+                                    {% else %}
+                                    <h4>$ 0.00 </h4>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="money-info item">
+                            <div class="total-deposits-background">
+                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                                <div class="amount-container">
+                                    <span class="total-deposits">Crude Oil</span> 
+                                    {% if crudeoil.amount %}
+                                    <h4>$ {{ crudeoil.amount }}</h4>
+                                    {% else %}
+                                    <h4>$ 0.00 </h4>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="money-info item">
+                            <div class="current-balance-background">
+                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                                <div class="amount-container">
+                                    <span class="total-withdrawals">Others</span>
+                                        {% if otherInvestments.amount %}
+                                            <h4>{{ otherInvestments.amount }}</h4>        
+                                        {% else %}
+                                            <h4>$ 0.00 </h4>        
+                                        {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -149,6 +235,54 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="money-info item">
+                    <div class="current-balance-background">
+                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+
+                        <!-- remove -->
+                        <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
+                        <div class="amount-container">
+                            <span class="current-balance">Marijuana</span>
+                            {% if marijuana.amount %}
+                        <h4>$ {{ marijuana.amount }}</h4>        
+                    {% else %}
+                        <h4>$ 0.00 </h4>        
+                    {% endif %} 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="money-info item">
+                    <div class="total-deposits-background">
+                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                        <div class="amount-container">
+                            <span class="total-deposits">Crude Oil</span>
+                             {% if crudeoil.amount %}
+                        <h4>$ {{ crudeoil.amount }}</h4>        
+                    {% else %}
+                        <h4>$ 0.00 </h4>        
+                    {% endif %}    
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="money-info item">
+                    <div class="current-balance-background">
+                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                        <div class="amount-container">
+                            <span class="total-withdrawals">Others</span>
+
+                            {% if otherInvestments.amount %}
+                        <h4>{{ otherInvestments.amount }}</h4>        
+                    {% else %}
+                        <h4>$ 0.00 </h4>        
+                    {% endif %}
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="container">

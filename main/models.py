@@ -78,7 +78,7 @@ class WithdrawalBalance(models.Model):
     amount = models.DecimalField(default = 0.00, decimal_places=2, max_digits=10)
 
 class TotalDeposit(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.DecimalField(default = 0.00, decimal_places=2, max_digits=10)
 
 class TotalWithdrawal(models.Model):
@@ -137,3 +137,14 @@ class CreditCard(models.Model):
 class Deposit(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
 
+class Marijuana(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    amount = models.DecimalField(default = 0.00, decimal_places=2, max_digits=10)
+
+class CrudeOil(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    amount = models.DecimalField(default = 0.00, decimal_places=2, max_digits=10)
+
+class OtherInvestments(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    amount = models.DecimalField(default = 0.00, decimal_places=2, max_digits=10)

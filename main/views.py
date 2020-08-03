@@ -22,9 +22,7 @@ from .token import account_activation_token
 
 # importing models 
 from .models import TradingHistory, Profile,WithdrawalBalance, TotalDeposit, TotalWithdrawal, Notification, Plans, BankTransfer, Notification
-
-# background task 
-# from background_task import background
+from .models import Marijuana, CrudeOil, OtherInvestments
 
 # updater 
 from .updater import autoincr
@@ -138,9 +136,20 @@ def dashboard(request):
 
     # balance
     balance = WithdrawalBalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    # total_deposits
     total_deposits = TotalDeposit.objects.filter(user=user).aggregate(amount=Sum('amount'))
-    # total_deposits = TotalDeposit.objects.all()
-    total_withdrawals = TotalWithdrawal.objects.all()
+
+    # withdrawals
+    total_withdrawals = TotalWithdrawal.objects.filter(user=user).aggregate(amount=Sum('amount'))
+
+    # marijuana
+    marijuana = Marijuana.objects.filter(user=user).aggregate(amount=Sum('amount'))
+
+    # crudeoil
+    crudeoil = CrudeOil.objects.filter(user=user).aggregate(amount=Sum('amount'))
+
+    # other investments
+    otherInvestments = OtherInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
 
     # Notification
     notification = Notification.objects.all().filter(user=user).order_by('-notification_date_time')
@@ -150,6 +159,9 @@ def dashboard(request):
         'total_deposit': total_deposits, 
         'total_withdrawals': total_withdrawals, 
         'notification': notification, 
+        'marijuana': marijuana, 
+        'crudeoil': crudeoil,
+        'otherInvestments': otherInvestments
     }
     return render(request, 'main/dashboard.html', context)
 
