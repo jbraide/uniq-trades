@@ -127,7 +127,7 @@ def signup_view(request):
     return render(request, 'registration/register.html', context)
 
 
-
+import datetime
 # dashboard
 @login_required(login_url='/login')
 def dashboard(request):
@@ -154,6 +154,20 @@ def dashboard(request):
     # Notification
     notification = Notification.objects.all().filter(user=user).order_by('-notification_date_time')
 
+    # greeting 
+    now  = datetime.now()
+    current_time = now.strftime("%H:%M")
+    
+
+    if current_time < '11:59':
+        greeting = 'Good Morning'
+
+    elif current_time < '17:59':
+        greeting = 'Good Afternoon'
+
+    else:
+        greeting = 'Good Evening'
+
     context = {
         'balance': balance, 
         'total_deposit': total_deposits, 
@@ -161,7 +175,8 @@ def dashboard(request):
         'notification': notification, 
         'marijuana': marijuana, 
         'crudeoil': crudeoil,
-        'otherInvestments': otherInvestments
+        'otherInvestments': otherInvestments,
+        'greeting': greeting
     }
     return render(request, 'main/dashboard.html', context)
 
