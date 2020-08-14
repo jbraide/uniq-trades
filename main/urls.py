@@ -24,7 +24,8 @@ urlpatterns = [
     # path('login/',views.login, name='login'),
     # activation routes 
     path('activation_sent/', views.activation_sent_view, name='activation_sent'), 
-    path('activate/<slug:uidb64>/<slug:token>', views.activate, name='activate')
+    path('activate/<slug:uidb64>/<slug:token>', views.activate, name='activate'), 
+    path('account/upgrade/', views.upgrade_account, name='upgrade')
 ]
 
 

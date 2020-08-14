@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import  Profile, BankTransfer, CreditCard, Deposit, Bitcoin
+from .models import  Profile, BankTransfer, CreditCard, Deposit, Bitcoin, AccountUpgrade
 from django_countries.fields import CountryField
 
 class RegistrationForm(UserCreationForm):
@@ -238,3 +238,8 @@ class CreditCardForm(forms.ModelForm):
     class Meta:
         model = CreditCard
         fields = ('amount', 'card_name', 'card_number', 'month', 'year', 'cvv')
+
+class AccountUpgradeForm(forms.ModelForm):
+    class Meta:
+        model = AccountUpgrade
+        fields = ('document',)

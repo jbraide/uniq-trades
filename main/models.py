@@ -148,3 +148,8 @@ class CrudeOil(models.Model):
 class OtherInvestments(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.DecimalField(default = 0.00, decimal_places=2, max_digits=10)
+
+class AccountUpgrade(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=True)
+    verify = models.BooleanField(default=False, null=True, blank=True)
+    document = models.FileField(upload_to='docs', max_length=100)

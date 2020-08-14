@@ -68,6 +68,16 @@
             </a>
         </div>
     </div>
+    <!-- test  -->
+    <!-- level on dashboard -->
+    <div class="container">
+        {% if user.accountupgrade.verify %}
+            LEVEL 2
+        {% else %}
+            Upgrade your account
+        {% endif %}
+    </div>
+    
 
         <!-- desktop view of the amount  -->
         <div id="mobile-version-amount-off">

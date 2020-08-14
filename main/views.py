@@ -15,7 +15,7 @@ from django.db import IntegrityError
 from django.db.models import Sum
 
 # forms
-from .forms import RegistrationForm, BankTransferForm, CreditCardForm, DepositForm, ProfileForm, CreditCardForm, BitcoinForm
+from .forms import RegistrationForm, BankTransferForm, CreditCardForm, DepositForm, ProfileForm, CreditCardForm, BitcoinForm, AccountUpgradeForm
 
 # registration token 
 from .token import account_activation_token
@@ -366,6 +366,30 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
+# account upgrade
+@login_required(login_url='/login')
+def upgrade_account(request):
+    user = request.user
+    # Upgr
+    if request.method == 'POST':
+        form = AccountUpgradeForm(request.POST,  request.FILES)
+        if form.is_valid():
+            form_upgrade = form.save(commit=False)
+            print(request.user.username)
+            form_upgrade.user.user = user.username
+            form_upgrade.save() 
+            # form.save()
+            print('saved')
+        else:
+            print(form.errors)
+    else:
+        form = AccountUpgradeForm()
+
+    context = {
+        'upgrade_form':form
+    }
+    return render(request, 'main/upgrade.html', context)
+
 # 404 route
 def error_404_view(request, exception): 
     data = {"name": "ThePythonDjango.com"}
@@ -374,23 +398,3 @@ def error_404_view(request, exception):
 def error_500_view(request): 
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'errors/500.html', data)
-
-
-# TEST LOGIN
-
-# from .forms import LoginForm
-# from django.contrib.auth import login,authenticate
-# def login(request):
-#     if request.method == 'POST':
-#         form = LoginForm(request.POST)
-#         if form.is_valid:
-#             data = form.cleaned_data
-#             username = data.get('username')
-#             print(username)
-#     else:
-#         form = LoginForm()
-    
-#     context = {
-#         'form':form,
-#     }
-#     return render(request, 'main/login.html', context )

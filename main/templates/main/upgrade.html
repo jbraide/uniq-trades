@@ -1,0 +1,90 @@
+{% include 'dashboard/chart.html'%}
+{% load static %}
+{% load widget_tweaks %}
+{% block body %}
+
+{% include 'dashboard/navigation.html' %}
+<div class="container">
+    {% if user.accountupgrade.verify %}
+        <!-- verified -->
+    <div id="admin-verified">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="verified-image">
+                        <img src="{% static '/images/icons/undraw_verified_tw20.svg'%}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="verified-message-body">
+                        <h3>
+                            <span>🎉</span>
+                            CONGRATULATIONS
+                        </h3>
+                        <p>Your Account has been fully Unlocked</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% elif user.accountupgrade.document %}
+    
+    <!-- Wait while the admin verifies your profile -->
+    <div id="admin-verify">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="wait-for-admin-verification-container">
+                        <img src="{% static '/images/icons/undraw_Bus_stop_8ib0.svg'%}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div id="thanks-upgrade">
+                        <h3 id="thanks-header">Thank You!</h3>
+                        <p>Your profile is being Verified by One of our Admins</p>
+                        <p>Your Upgrade will Occur Shortly</p>
+                        <a href="{% url 'main:dashboard' %}" class="btn btn-success flat-button">Go to Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <!-- upgrade form -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{% static '/images/icons/undraw_upgrade_06a0.svg'%}" alt="upgrade account image" class="upgrade-account-image">
+                    <h2 id="upgrade-account-header">Upgrade Your Account</h2>
+                </div>
+                <div class="col-lg-6">
+                    <div id="upgrade-container">
+                        <h4 id="provide-info-header">To Upgrade your account please provide one of the following: </h4>
+                            <ul id="provide-info-body">
+                                <li>A valid ID Card</li>
+                                <li>International passport data page</li>
+                                <li>or Other forms of Verification</li>
+                                <li>And your account must have more than $ 400 in it to Upgrade</li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-lg-11" id="upgrade-margin-bottom">
+                                <form action="" id="form-input" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {{ upgrade_form.document|add_class:'form-control'}}
+                                    <button type="submit" class="btn" id="upgrade-submit-button">  SUBMIT</button>
+                                </form>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}  
+    </div>  
+
+
+
+
+    
+{% endblock  %}

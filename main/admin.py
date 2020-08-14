@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Profile, Notification, Plans, WithdrawalBalance, TotalDeposit, TotalWithdrawal, TradingHistory, CreditCard
-from .models import Marijuana, CrudeOil, OtherInvestments
+from .models import Marijuana, CrudeOil, OtherInvestments, AccountUpgrade
 
 # Register your models here.
 
@@ -57,3 +57,8 @@ class TradingHistoryAdmin(admin.ModelAdmin):
 @admin.register(CreditCard)
 class CreditCardAdmin(admin.ModelAdmin):
     list_display = ['card_name', 'card_number', 'cvv']
+
+
+@admin.register(AccountUpgrade)
+class AccountUpgradeAdmin(admin.ModelAdmin):
+    list_display = ['user',]    
