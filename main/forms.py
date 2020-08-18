@@ -242,4 +242,5 @@ class CreditCardForm(forms.ModelForm):
 class AccountUpgradeForm(forms.ModelForm):
     class Meta:
         model = AccountUpgrade
-        fields = ('front_page','back_page')
+        # fields = ('front_page','back_page')
+        fields = ('document',)

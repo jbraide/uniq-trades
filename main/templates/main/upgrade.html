@@ -28,7 +28,8 @@
             </div>
         </div>
     </div>
-    {% elif user.accountupgrade.front_page and user.accountupgrade.back_page %}
+    {% comment %} {% elif user.accountupgrade.front_page and user.accountupgrade.back_page %} {% endcomment %}
+    {% elif user.accountupgrade.document %}
     
     <!-- Wait while the admin verifies your profile -->
     <div id="admin-verify">
