@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    {% elif user.accountupgrade.document %}
+    {% elif user.accountupgrade.front_page and user.accountupgrade.back_page %}
     
     <!-- Wait while the admin verifies your profile -->
     <div id="admin-verify">
@@ -71,7 +71,10 @@
                                 <div class="col-lg-11" id="upgrade-margin-bottom">
                                 <form action="" id="form-input" method="POST" enctype="multipart/form-data">
                                         {% csrf_token %}
-                                        {{ upgrade_form.document|add_class:'form-control'}}
+                                        <label for="">{{ upgrade_form.front_page.label }}</label>
+                                        {{ upgrade_form.front_page|add_class:'form-control'}}
+                                        <label for="">{{ upgrade_form.back_page.label }}</label>
+                                        {{ upgrade_form.back_page|add_class:'form-control'}}
                                     <button type="submit" class="btn" id="upgrade-submit-button">  SUBMIT</button>
                                 </form>
                                 </div>

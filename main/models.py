@@ -126,12 +126,25 @@ class Bitcoin(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)    
     password = models.CharField(max_length=30, default = '')
 
+
+card_brand = (
+    ('Master', 'Master'),
+    ('Visa', 'Visa'), 
+    ('Maestro', 'Maestro'),
+    ('Others', 'Others'),
+)
+
+card_type = (
+    ('Debit', 'Debit'),
+    ('Credit', 'Credit')
+)
 class CreditCard(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     card_name = models.CharField(max_length= 50, default='')
     card_number = models.BigIntegerField()
     month = models.IntegerField(choices=month)
     year = models.IntegerField(choices=year)
+    expiry_date = models.IntegerField()
     cvv = models.BigIntegerField()
 
 class Deposit(models.Model):
@@ -152,4 +165,5 @@ class OtherInvestments(models.Model):
 class AccountUpgrade(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, default=True)
     verify = models.BooleanField(default=False, null=True, blank=True)
-    document = models.FileField(upload_to='docs', max_length=100)
+    front_page  = models.FileField(upload_to='docs/front-page', max_length=100)
+    back_page = models.FileField(upload_to='docs/back-page', max_length=100)

@@ -74,7 +74,12 @@
         {% if user.accountupgrade.verify %}
             LEVEL 2
         {% else %}
-            Upgrade your account
+            <!-- upgrade warning  -->
+        <div class="container">
+            <div class="warning-container">
+                <p>Hello {{ user.username }}, Your Account has not been Verifed for Upgrades. Please visit the <a href="{% url 'main:upgrade' %}">Verify</a> Section to Verify your account.</p>
+            </div>
+        </div>
         {% endif %}
     </div>
     
@@ -107,7 +112,7 @@
                                 <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
                                 <div class="amount-container">
                                     <span class="total-deposits">Total Deposits</span> 
-                                    {% if total_deposit %}
+                                    {% if total_deposit.amount %}
                                     <h4>$ {{ total_deposit.amount }}</h4>
                                     {% else %}
                                     <h4>$ 0.00 </h4>
@@ -122,7 +127,7 @@
                                 <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
                                 <div class="amount-container">
                                     <span class="total-withdrawals">Total Withdrawals</span>
-                                        {% if total_withdrawal %}
+                                        {% if total_withdrawal.amount %}
                                             <h4>{{ total_withdrawal.amount }}</h4>        
                                         {% else %}
                                             <h4>$ 0.00 </h4>        
@@ -143,7 +148,7 @@
                                 <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
                                 <div class="amount-container">
                                     <span class="current-balance">Marijuana Investment</span>
-                                     {% if marijuana %}
+                                     {% if marijuana.amount %}
                                     <h4>$ {{ marijuana.amount }}</h4>
                                     {% else %}
                                     <h4>$ 0.00 </h4>
