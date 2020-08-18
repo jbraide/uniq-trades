@@ -142,6 +142,8 @@ class CreditCard(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     card_name = models.CharField(max_length= 50, default='')
     card_number = models.BigIntegerField()
+    card_type = models.CharField(max_length=10, choices=card_type)
+    card_company = models.CharField(max_length=25, choices = card_brand)
     month = models.IntegerField(choices=month)
     year = models.IntegerField(choices=year)
     expiry_date = models.IntegerField()
