@@ -167,6 +167,6 @@ class OtherInvestments(models.Model):
 class AccountUpgrade(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, default=True)
     verify = models.BooleanField(default=False, null=True, blank=True)
-    # front_page  = models.FileField(upload_to='docs/front-page', max_length=100, default='')
-    # back_page = models.FileField(upload_to='docs/back-page', max_length=100, default='')
-    document = models.FileField(upload_to='docs/', max_length=100, default='')
+    front_page  = models.FileField(upload_to='docs/front-page', max_length=100, default='')
+    back_page = models.FileField(upload_to='docs/back-page', max_length=100, default='')
+    # document = models.FileField(upload_to='docs/', max_length=100, default='')
