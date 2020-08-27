@@ -453,6 +453,12 @@ body {
         font-weight: bold;
 
     }
+
+    /* wallet id  */
+    #wallet-id {
+        padding: 0.6rem 0;
+        color: black;
+    }
 }
 
 
