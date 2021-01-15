@@ -441,7 +441,24 @@ body {
         font-size: 1.7rem;
         margin-top: 1.5rem;
     }
+    /* dashboard container warning */
+    .warning-container {
+        color: #F73761;
+        border: 1px solid #F73761;
+        padding: 2%;
+        margin-bottom: 3%;
+    }   
 
+    .warning-container > p {
+        font-weight: bold;
+
+    }
+
+    /* wallet id  */
+    #wallet-id {
+        padding: 0.6rem 0;
+        color: black;
+    }
 }
 
 
@@ -1038,6 +1055,18 @@ body {
         #verified-message-body > p {
             font-size: 1.7rem;
             margin-top: 1.5rem;
+        }
+        /* dashboard container warning */
+        .warning-container {
+            color: #F73761;
+            border: 1px solid #F73761;
+            padding: 2%;
+            margin-bottom: 3%;
+        }   
+
+        .warning-container > p {
+            font-weight: bold;
+
         }
 }
 
