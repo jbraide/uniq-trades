@@ -6,15 +6,20 @@ from . import views
 app_name = 'main'
 
 urlpatterns = [
+    # home page & non login information
     path('', views.index, name='index'),
     path('invest-in', views.investments, name='investments'),
+    path('plans/', views.plans, name='plans'),
+    path('contact-us/', views.contact, name='contact-us'),
+    path('invest/marijuana/', views.marijuana, name='marijuana' ),
+    path('invest/forex/', views.forex, name='forex' ),
+    path('invest/commodities/', views.commodities, name='commodities' ),
+    path('invest/crude-oil/', views.crudeOil, name='crude-oil' ),
+    # dashboard logic
+    path('account/', views.account, name='account'),
+    path('account/settings/', views.account_settings, name='account-settings'),    
     path('dashboard/', views.dashboard, name='dashboard'),
     path('charts/', views.charts, name='charts'),
-    path('plans/', views.plans, name='plans'),
-    path('account/', views.account, name='account'),
-    path('account/settings/', views.account_settings, name='account-settings'),
-    path('contact-us/', views.contact, name='contact-us'),
-    # path('incr/', views.autoincrement, name='incr'),
     path('deposit/', views.deposit, name='deposit'),
     path('withdraw/method',views.withdrawal_method, name='withdrawal-method'),
     path('withdraw/bitcoin', views.bitcoin,name='bitcoin'),

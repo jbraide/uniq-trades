@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  -->
+<!-- {% load static %} -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- replace and remove -->
+    <!-- <title>{% block title %} Home {% endblock %}</title> -->
+    <title>FOREX</title>
+
+    <!-- bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- css -->
+
+    <!-- replace and remove -->
+    <!-- <link rel="stylesheet" href="{% static 'css/main.css' %} "> -->
+    <!-- <link rel="stylesheet" href="/static/css/main.css"> -->
+    <link rel="stylesheet" href="../../static/css/main.css">
+    <link rel="stylesheet" href="../../static/css/invesmtents.css">
+
+
+    <!-- Animate.css -->
+
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'css/animate.css' %} "> -->
+
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.min.css">
+
+    <!-- wowjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+
+
+    <!-- chatapp -->
+    <!--Start of Tawk.to Script-->
+
+    <!--End of Tawk.to Script-->
+
+    <!-- main js file -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <link rel="stylesheet" href="../../static/css/slider.css">
+</head>
+
+<body>
+    {% include "components/nav.html" %}
+
+
+
+    <div class="forex-banner">
+        <h3 class="text-center">
+            INVEST IN FOREX
+        </h3>
+    </div>
+
+    <div class="container">
+        <div class="row forex-content">
+            <h3 class="text-center forex-header">
+                Trade the most popular currency pairs with limited risk and low cost
+            </h3>
+            <p class="text-center">
+                Forex market (short for “foreign exchange”) is the largest and the most liquid financial market where the global currencies are traded. Forex traders purchase currencies with the intent to make money off of the difference between the buying and the selling
+                prices.
+            </p>
+            <div class="col-lg-6">
+                <div class="forex-chart">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                            {
+                                "interval": "1D",
+                                "width": "100%",
+                                "isTransparent": false,
+                                "height": "100%",
+                                "symbol": "NASDAQ:GBP",
+                                "showIntervalTabs": true,
+                                "locale": "en",
+                                "colorTheme": "light"
+                            }
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+            <div class="col-lg-6 forex-description">
+                <p>
+                    Get in on the action of the most traded market in the world.
+                </p>
+                <p>
+                    The largest volume market in the world is currency exchange, with an average daily turnover of five trillion dollars. Traded across the global banking system, the spot forex market offers tremendous liquidity and opportunity.
+                </p>
+                <p>
+                    UniqTrades offers 10 of the most popular forex pairs as limited-risk binary options and spreads. You can trade them 24 hours a day, 5 days a week.
+                </p>
+                <p>
+                    The forex market has an average daily turnover of $5 trillion as traders strive to turn a profit by speculating on the value of one currency compared to another. Ready to be part of the market moves with a global leader in online currency trading?
+                </p>
+                <a href="{% url 'register' %}" class="trade-button btn btn-success">
+                        Trade Forex
+                    </a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script>
+        wow = new WOW({
+            boxClass: 'wow', // default
+            animateClass: 'animated', // default
+            offset: 0, // default
+            mobile: true, // default
+            live: true // default
+        });
+        wow.init()
+    </script>
+</body>
+
+</html>

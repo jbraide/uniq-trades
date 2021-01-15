@@ -39,9 +39,26 @@ def index(request):
 def investments(request):
     return render(request, 'main/investments.html')
 
+# marijuana
+def marijuana(request):
+    return render(request, 'main/marijuana.html')
+
+# forex
+def forex(request):
+    return render(request, 'main/forex.html')
+
+# crude oil 
+def crudeOil(request):
+    return render(request, 'main/crude-oil.html')
+
+def commodities(request):
+    return render(request, 'main/commodities.html')
+
 # activation sent view 
 def activation_sent_view(request):
     return render(request, 'registration/activation_sent.html')
+
+
     
 
 # activation view

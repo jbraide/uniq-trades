@@ -12,7 +12,7 @@
     <!-- owl carousel  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-        <!-- owl-carousel -->
+    <!-- owl-carousel -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"> -->
 
@@ -31,6 +31,10 @@
 
     <!-- css -->
     <link rel="stylesheet" href="{% static 'css/main.css' %} ">
+
+    <!-- investment css -->
+    <link rel="stylesheet" href="{% static 'css/investments.css' %} ">
+
 
     <!-- slider css -->
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
@@ -51,749 +55,612 @@
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/5ed8c1054a7c62581799e5ef/default';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5ed8c1054a7c62581799e5ef/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
     <!--End of Tawk.to Script-->
 
-    
+
 </head>
 
 <body>
-    <!-- top header -->
-    <div class="top-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-xs-6 header-padding">
-                    <span class="fas fa-phone-alt"></span> +1 (480) 361-5311 
-                </div>                
-                <div class="col-lg-2 col-xs-6 header-padding">
-                    <span class="fas fa-envelope"></span> support@uniqtrades
-                </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-1"></div>
-                {% if user.is_authenticated %}
-                <div class="col-lg-1 col-xs-6 header-padding">
-                    <span class="fas fa-lock"></span>
-                    <a href="/dashboard">
-                      Dashboard
-                    </a>
-                </div>
-                <div class="col-lg-2 col-xs-6 header-padding">
-                    <span class="fas fa-user-lock"></span>
-                    <a href="/logout">Logout</a>
-                </div>
-                {% else %}
-                <div class="col-lg-1 col-xs-6 header-padding">
-                    <span class="fas fa-lock"></span>
-                    <a href="/login">
-                      Login
-                    </a>
-                </div>
-                <div class="col-lg-2 col-xs-6 header-padding">
-                    <span class="fas fa-user-lock"></span>
-                    <a href="/register">Register</a>
-                </div>
 
-                {% endif %}
+    {% include "components/nav.html" %}
+
+
+    <!-- Banner  -->
+
+    <!-- slider -->
+    <div class="slider-container" id="slider-container">
+        <div class="caption" id="slider-caption">
+            <div class="caption-heading">
+
             </div>
+            <div class="caption-subhead"><span>INVESTMENT PLATFORM</span></div><a class="btn" href="#">Sit Amet</a></div>
+
+        <div class="left-col" id="left-col">
+            <div id="left-slider"></div>
         </div>
-       
-    </div>
-
-    <div class="content">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                 <span class="sr-only">Toggle navigation</span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-               </button>
-                    <a class="navbar-brand" href="#">
-                        <img alt="Brand" class="logo" src="{% static 'images/uniqtrades-logo.png' %}">
-                    </a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="">About Us</a>
-                        </li>
-                        <li>
-                            <a href="">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-
-
-
-        <!-- Banner  -->
-
-        <!-- slider -->
-        <div class="slider-container" id="slider-container">
-            <div class="caption" id="slider-caption">
-                <div class="caption-heading">
-                    
-                </div>
-                <div class="caption-subhead"><span>INVESTMENT PLATFORM</span></div><a class="btn" href="#">Sit Amet</a></div>
-                
-            <div class="left-col" id="left-col">
-                <div id="left-slider"></div>
-            </div>
-            <div class="extra-info">
-                    <h3>TRADE STOCKS,<br/> CRUDE OIL,<br/> MARIJUANA <br/>AND LOTS MORE</h3>
-                    <a href="{% url 'main:investments' %}" class="btn btn-primary" id="extra-info-button">Read More</a>
-            </div>
-            <ul>
-                <!-- <li class="slide-up">
+        <div class="extra-info">
+            <h3>TRADE STOCKS,<br/> CRUDE OIL,<br/> MARIJUANA <br/>AND LOTS MORE</h3>
+            <a href="{% url 'main:investments' %}" class="btn btn-primary" id="extra-info-button">Read More</a>
+        </div>
+        <ul>
+            <!-- <li class="slide-up">
                     <a href="#">
                         <</a>
                 </li> -->
-                <li class="slide-down"> <a id="down_button" href="#"></a></li>
-            </ul>
-            <div class="button-call-to-action">
-                <a class="join-us" href="/register">
+            <li class="slide-down">
+                <a id="down_button" href="#"></a>
+            </li>
+        </ul>
+        <div class="button-call-to-action">
+            <a class="join-us" href="/register">
                     Join Us
                 </a>
-            </div>
         </div>
-        <!-- end of banner -->
+    </div>
+    <!-- end of banner -->
 
 
-        <div class="parallax">
-            <!-- about us  -->
-    
-            <div id="about-us-image">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/UpBPwcPQVD4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
-            </div>
-    
-            <!-- *-f-r # float right -->
-            <div class="wow bounceInRight desktop-f-r background-right">
-                <div class="about-us-banner">
-                    <div class="about-us-inner-margin">
-    
-                        <div id="desktop-about-width">
-                            <h3 class="text-center about-us-header wow bounceInDown">ABOUT UNIQ TRADES</h3>
-                            <!-- <span class=""></span> -->
-                            <div class="line-under wow rubberBand"></div>
-                            <p class="about-us wow slideInRight">
-                                We provide fastest trading using modern technologies. No delays in order executions and most accurate quotes. Our trading platform is available around the clock and on weekends. Uniqtrades customer service runs 24/7. We are continuously adding new financial
-                                instruments.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <!-- end of about us  -->
+    <div class="parallax">
+        <!-- about us  -->
 
-
-        <!-- how we work -->
-        <div class="thin-border wow flipInX">
-            <div class="how-we-work-background animated rubberBand">
-                <h4 class="text-center service-header animated lightSpeedIn">HOW WE WORK</h4>
-            </div>
+        <div id="about-us-image">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UpBPwcPQVD4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <div class="how-we-work">
-            <div class="services-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 col-lg-4">
+        <!-- *-f-r # float right -->
+        <div class="wow bounceInRight desktop-f-r background-right">
+            <div class="about-us-banner">
+                <div class="about-us-inner-margin">
 
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/shield.png'%}" alt="">
-
-                                </div>
-                                <div class="service-body">
-                                    <h5 class="text-center main-service-header wow fadeIn">Uncompromised Safety</h5>
-                                    <p class="text-center main-service-subheading wow fadeIn">
-                                        With six regulatory authorities and segregated accounts, your money is protected at all times.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-
-                            <div class="service-details">
-                                <div class="service-icon wow fadeIn">
-                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/search.png'%}" alt="">
-                                </div>
-                                <div class="service-body">
-                                    <h5 class="text-center main-service-header wow fadeIn">No Hidden Fees</h5>
-                                    <p class="text-center main-service-subheading wow fadeIn">
-                                        We offer 5% commissions.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-
-                            <div class="service-details">
-                                <div class="service-icon wow fadeIn">
-                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/24-7.png'%}" alt="">
-                                </div>
-                                <div class="service-body">
-                                    <h5 class="text-center main-service-header wow fadeIn">Bitcoin Never Goes to Sleep</h5>
-                                    <p class="text-center main-service-subheading wow fadeIn">
-                                        Uniqtrade is one of the few brokers offer around-the-clock service and support in 14 languages.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-sm-12 col-md-6 col-lg-6">
-
-                            <div class="service-details">
-                                <div class="service-icon wow fadeIn">
-                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/risk.png'%}" alt="">
-                                </div>
-                                <div class="service-body">
-                                    <h5 class="text-center main-service-header wow fadeIn">Limit Your Risk </h5>
-                                    <p class="text-center main-service-subheading wow fadeIn">
-                                        You can preset profit and loss levels by using stop losses or take profit limits when you trade. Determine the maximum amount you are prepared to risk when speculating on the price, or set a price at which you want to take profits. Future orders like
-                                        Buy Stops and Buy Limits are also available.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-sm-12 col-md-6 col-lg-6">
-                            <div class="service-details">
-                                <div class="service-icon wow fadeIn">
-                                    <img class="service-images wow slideInDown" src="{% static 'images/icons/new/dollar.png'%}" alt="">
-                                </div>
-                                <div class="service-body">
-                                    <h5 class="text-center main-service-header wow fadeIn">Trade Cryptos Against Fiat Currencies</h5>
-                                    <p class="text-center main-service-subheading wow fadeIn">
-                                        Unlike many exchanges out there, who are restricting their clients to trade only Crypto to Crypto, our clients can trade Cryptos against Fiat currencies (USD, EUR, JPY etc.), as well.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="desktop-about-width">
+                        <h3 class="text-center about-us-header wow bounceInDown">ABOUT UNIQ TRADES</h3>
+                        <!-- <span class=""></span> -->
+                        <div class="line-under wow rubberBand"></div>
+                        <p class="about-us wow slideInRight">
+                            We provide fastest trading using modern technologies. No delays in order executions and most accurate quotes. Our trading platform is available around the clock and on weekends. Uniqtrades customer service runs 24/7. We are continuously adding new financial
+                            instruments.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- end of about us  -->
 
-        <!-- end of how we work -->
 
-        <!-- Plans -->
-        <div class="container">
-            <div class="row">
-                <h3 class="plan-header">Plans</h3>
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">Premium</h4>
-                            <h2 class="plan-amount">$ 1,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                10% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 0.6
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-center">
-                    
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">Luxury</h4>
-                            <h2 class="plan-amount">$ 2,500</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                25% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.9
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner"> VIP</h4>
-                            <h2 class="plan-amount">$ 5,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                50% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.5
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                    <span class="fas fa-check"></span>
-                                    scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                            </p>
-                            <p>
-                                    <span class="fas fa-check"></span>
-                                    Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>                    
-                
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">VIP Luxury</h4>
-                            <h2 class="plan-amount">$ 7,500</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                60% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 0.6
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">SILVER</h4>
-                            <h2 class="plan-amount">$ 10,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                75% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.9
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">GOLD</h4>
-                            <h2 class="plan-amount">$ 25,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                91% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.5
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">PLATINUM</h4>
-                            <h2 class="plan-amount">$ 50,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                95% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.5
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">DIAMOND</h4>
-                            <h2 class="plan-amount">$ 75,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                110% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.5
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">SAPPHIRE</h4>
-                            <h2 class="plan-amount">$ 150,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                150% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.5
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">EMERALD</h4>
-                            <h2 class="plan-amount">$ 350,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                120% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.5
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">TANZANITE</h4>
-                            <h2 class="plan-amount">$ 500,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                200% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.5
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <div class="front-card">
-                        <div class="plans">
-                            <h4 class="plan-header-inner">RUBY</h4>
-                            <h2 class="plan-amount">$ 750,000</h2>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                210% Deposit Bonus
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                spread 1.5
-                            </p>
-                            <p> 
-                                <span class="fas fa-check"></span>
-                                Negative balance protection
-                            </p>
-                            <p>
-                                 <span class="fas fa-check"></span>
-                                 scalping   
-                            </p>
-                            <p>
-                                <span class="fas fa-check"></span>
-                                Daily Signals   
-                           </p>
-                           <p>
-                                 <span class="fas fa-check"></span>
-                                 Financial Plan
-                            </p>
-                            <a href="/register" class="btn btn-success plan-button">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+    <!-- how we work -->
+    <div class="thin-border wow flipInX">
+        <div class="how-we-work-background animated rubberBand">
+            <h4 class="text-center service-header animated lightSpeedIn">HOW WE WORK</h4>
         </div>
+    </div>
 
-        <!-- end of plan -->
-
-
-        <!-- bitcoin -information -->
-
-        <div class="wow bounceInUp">
-            <div class="bitcoin-information text-center container">
-                <h3 class="">CRYPTO-CURRENCY
-                    <br/> INFORMATION</h3>
-                <div class="line-under"></div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="chart-center">
-                <div class="btcwdgt-chart" bw-noshadow="true"></div>
-            </div>
-        </div>
-        <!-- end of bitcoin information -->
-
-        <!-- help section -->
-
-        <section class="help text-center">
-            <h3 class="wow fadeInRight">HAVE A QUESTION?</h3>
-            <h3 class="wow slideInLeft">WE HELP HERE</h3>
-            <span id="support-email wow bounceIn">support@uniqtrades.com</span>
-        </section>
-
-        <!-- end of help section -->
-
-        <!-- company information -->
-        <div class="company-information-container text-center ">
-            <h3 class="company-information wow bounce">Company Information</h3>
-            <div class="line-under wow rubberBand"></div>
-            <br>
+    <div class="how-we-work">
+        <div class="services-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="company-name">
-                            <h4 class="wow slideInRight">COMPANY NAME</h4>
-                            <h3 class="wow bounceInUp">UNIQ TRADES</h3>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+
+                        <div class="service-details">
+                            <div class="service-icon">
+                                <img class="service-images wow slideInDown" src="{% static 'images/icons/new/shield.png'%}" alt="">
+
+                            </div>
+                            <div class="service-body">
+                                <h5 class="text-center main-service-header wow fadeIn">Uncompromised Safety</h5>
+                                <p class="text-center main-service-subheading wow fadeIn">
+                                    With six regulatory authorities and segregated accounts, your money is protected at all times.
+                                </p>
+                            </div>
                         </div>
+
                     </div>
 
-                    <br>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="company-number">
-                            <h4 class="wow slideInRight">COMPANY NUMBER</h4>
-                            <h3 class="wow bounceInUp">#06514515</h3>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+
+                        <div class="service-details">
+                            <div class="service-icon wow fadeIn">
+                                <img class="service-images wow slideInDown" src="{% static 'images/icons/new/search.png'%}" alt="">
+                            </div>
+                            <div class="service-body">
+                                <h5 class="text-center main-service-header wow fadeIn">No Hidden Fees</h5>
+                                <p class="text-center main-service-subheading wow fadeIn">
+                                    We offer 5% commissions.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+
+                        <div class="service-details">
+                            <div class="service-icon wow fadeIn">
+                                <img class="service-images wow slideInDown" src="{% static 'images/icons/new/24-7.png'%}" alt="">
+                            </div>
+                            <div class="service-body">
+                                <h5 class="text-center main-service-header wow fadeIn">Bitcoin Never Goes to Sleep</h5>
+                                <p class="text-center main-service-subheading wow fadeIn">
+                                    Uniqtrade is one of the few brokers offer around-the-clock service and support in 14 languages.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+
+                        <div class="service-details">
+                            <div class="service-icon wow fadeIn">
+                                <img class="service-images wow slideInDown" src="{% static 'images/icons/new/risk.png'%}" alt="">
+                            </div>
+                            <div class="service-body">
+                                <h5 class="text-center main-service-header wow fadeIn">Limit Your Risk </h5>
+                                <p class="text-center main-service-subheading wow fadeIn">
+                                    You can preset profit and loss levels by using stop losses or take profit limits when you trade. Determine the maximum amount you are prepared to risk when speculating on the price, or set a price at which you want to take profits. Future orders like
+                                    Buy Stops and Buy Limits are also available.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="service-details">
+                            <div class="service-icon wow fadeIn">
+                                <img class="service-images wow slideInDown" src="{% static 'images/icons/new/dollar.png'%}" alt="">
+                            </div>
+                            <div class="service-body">
+                                <h5 class="text-center main-service-header wow fadeIn">Trade Cryptos Against Fiat Currencies</h5>
+                                <p class="text-center main-service-subheading wow fadeIn">
+                                    Unlike many exchanges out there, who are restricting their clients to trade only Crypto to Crypto, our clients can trade Cryptos against Fiat currencies (USD, EUR, JPY etc.), as well.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <br>
-
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- end of how we work -->
+
+    <!-- Plans -->
+    <div class="container">
+        <div class="row">
+            <h3 class="plan-header">Plans</h3>
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">Premium</h4>
+                        <h2 class="plan-amount">$ 1,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 10% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 0.6
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">Luxury</h4>
+                        <h2 class="plan-amount">$ 2,500</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 25% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.9
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner"> VIP</h4>
+                        <h2 class="plan-amount">$ 5,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 50% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.5
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">VIP Luxury</h4>
+                        <h2 class="plan-amount">$ 7,500</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 60% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 0.6
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">SILVER</h4>
+                        <h2 class="plan-amount">$ 10,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 75% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.9
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">GOLD</h4>
+                        <h2 class="plan-amount">$ 25,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 91% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.5
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">PLATINUM</h4>
+                        <h2 class="plan-amount">$ 50,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 95% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.5
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">DIAMOND</h4>
+                        <h2 class="plan-amount">$ 75,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 110% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.5
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">SAPPHIRE</h4>
+                        <h2 class="plan-amount">$ 150,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 150% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.5
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">EMERALD</h4>
+                        <h2 class="plan-amount">$ 350,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 120% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.5
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">TANZANITE</h4>
+                        <h2 class="plan-amount">$ 500,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 200% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.5
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="front-card">
+                    <div class="plans">
+                        <h4 class="plan-header-inner">RUBY</h4>
+                        <h2 class="plan-amount">$ 750,000</h2>
+                        <p>
+                            <span class="fas fa-check"></span> 210% Deposit Bonus
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> spread 1.5
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Negative balance protection
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> scalping
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Daily Signals
+                        </p>
+                        <p>
+                            <span class="fas fa-check"></span> Financial Plan
+                        </p>
+                        <a href="/register" class="btn btn-success plan-button">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- end of plan -->
+
+
+    <!-- bitcoin -information -->
+
+    <div class="wow bounceInUp">
+        <div class="bitcoin-information text-center container">
+            <h3 class="">CRYPTO-CURRENCY
+                <br/> INFORMATION</h3>
+            <div class="line-under"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="chart-center">
+            <div class="btcwdgt-chart" bw-noshadow="true"></div>
+        </div>
+    </div>
+    <!-- end of bitcoin information -->
+
+    <!-- help section -->
+
+    <section class="help text-center">
+        <h3 class="wow fadeInRight">HAVE A QUESTION?</h3>
+        <h3 class="wow slideInLeft">WE HELP HERE</h3>
+        <span id="support-email wow bounceIn">support@uniqtrades.com</span>
+    </section>
+
+    <!-- end of help section -->
+
+    <!-- company information -->
+    <div class="company-information-container text-center ">
+        <h3 class="company-information wow bounce">Company Information</h3>
+        <div class="line-under wow rubberBand"></div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="company-name">
+                        <h4 class="wow slideInRight">COMPANY NAME</h4>
+                        <h3 class="wow bounceInUp">UNIQ TRADES</h3>
+                    </div>
+                </div>
+
+                <br>
+                <div class="col-sm-12 col-md-6">
+                    <div class="company-number">
+                        <h4 class="wow slideInRight">COMPANY NUMBER</h4>
+                        <h3 class="wow bounceInUp">#06514515</h3>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+        </div>
         <!-- Third round of funding -->
         <div class="container">
             <h3>Third round of funding</h3>
             <div class="line-under"></div>
             <p>
-                Whether you’re a loyal long-time shareholder or a newcomer to our funds, we want to make investing with us easy and enjoyable. Here you’ll find the prospectus for our funds, forms you may need to make changes to your accounts and applications for new accounts. Check out the FAQs for answers to questions you may have in mind. And if you’re just getting started with us, How to Invest will lead you through the simple process. Contact us for anything else you may need. We enjoy talking with our investors.
+                Whether you’re a loyal long-time shareholder or a newcomer to our funds, we want to make investing with us easy and enjoyable. Here you’ll find the prospectus for our funds, forms you may need to make changes to your accounts and applications for new
+                accounts. Check out the FAQs for answers to questions you may have in mind. And if you’re just getting started with us, How to Invest will lead you through the simple process. Contact us for anything else you may need. We enjoy talking
+                with our investors.
             </p>
             <p>
-                It’s easy to begin investing directly with U.S. Global Investors.
-You can apply right now online, by registering your account and mail us your documents for verification.
+                It’s easy to begin investing directly with U.S. Global Investors. You can apply right now online, by registering your account and mail us your documents for verification.
             </p>
             <p>
-                Using our secure online account application, you can get started right away!
-                Our minimum initial investment to just $1000. Learn more about achieving your financial goals with the ABC Investment Plan®️.  
+                Using our secure online account application, you can get started right away! Our minimum initial investment to just $1000. Learn more about achieving your financial goals with the ABC Investment Plan®️.
             </p>
             <p>
-                As a client of Uniq Trades, how do we help you achieve your financial goals? We consistently apply our prudent valuation-based investment approach: Simply put, we buy stocks and bonds that we think are undervalued by the market, and sell them once they have risen to reach their fair value to produce market-beating returns. We believe that consistency is key to successful investing.
+                As a client of Uniq Trades, how do we help you achieve your financial goals? We consistently apply our prudent valuation-based investment approach: Simply put, we buy stocks and bonds that we think are undervalued by the market, and sell them once they
+                have risen to reach their fair value to produce market-beating returns. We believe that consistency is key to successful investing.
             </p>
             <p>
-                Our clients are at the heart of our business and we're committed to providing the highest standards of client service. We've not only invested in great people, but state-of-the-art systems too, which enable our experienced in-house team to deliver on all our client queries and transactional support. Our clients can also contact us in a manner that suits them, be it on the phone, our website, email or even via one of our social media portals. 
+                Our clients are at the heart of our business and we're committed to providing the highest standards of client service. We've not only invested in great people, but state-of-the-art systems too, which enable our experienced in-house team to deliver on
+                all our client queries and transactional support. Our clients can also contact us in a manner that suits them, be it on the phone, our website, email or even via one of our social media portals.
             </p>
             <p>
-                Our first fund (Alpha) launched in February of 2017, and it has already delivered excellent results.  That fund invested in 31 companies in 2017, generating an Internal Rate of Return (IRR) of 23.5% by the end of 2017 (audited), over 40% at the twelve month mark*, and a phenomenal 58% at month 16*.  Our second fund (Max Alpha), which launched in January of 2018, is already generating an IRR of over 40%* since inception.  We are now seeking to add investors to the Max Alpha fund, and all new investors would participate in all of the fund’s investments, including those companies added to our portfolio earlier this year (many of which have increased substantially in value since our initial investment).
+                Our first fund (Alpha) launched in February of 2017, and it has already delivered excellent results.  That fund invested in 31 companies in 2017, generating an Internal Rate of Return (IRR) of 23.5% by the end of 2017 (audited), over 40% at the twelve
+                month mark*, and a phenomenal 58% at month 16*.  Our second fund (Max Alpha), which launched in January of 2018, is already generating an IRR of over 40%* since inception.  We are now seeking to add investors to the Max Alpha fund, and
+                all new investors would participate in all of the fund’s investments, including those companies added to our portfolio earlier this year (many of which have increased substantially in value since our initial investment).
             </p>
             <p>
-                Uniquetrade is raising its third fund, targeting a raise of $100M, to make roughly 600 to 650 investments over the next four years. We are targeting deals with high potential to exit in the 36 to 48 month range. Obviously, many deals will require more time, but our goal is to identify more mature early stage opportunities with the opportunity to exit within that time frame.
+                Uniquetrade is raising its third fund, targeting a raise of $100M, to make roughly 600 to 650 investments over the next four years. We are targeting deals with high potential to exit in the 36 to 48 month range. Obviously, many deals will require more
+                time, but our goal is to identify more mature early stage opportunities with the opportunity to exit within that time frame.
             </p>
         </div>
 
@@ -813,8 +680,9 @@ You can apply right now online, by registering your account and mail us your doc
                             </div>
                             <div class="col-lg-9 message-body">
                                 <div class="testifier-message">
-                                    <p>This has to be the most reliable,and easy to use platform I have ever tried, trusted,guaranteed and reliable. It’s seamless performance is top notch . I required weed investment, though my start-up was a bit shaky and scary but I said ”huge capital, huge profit”                                    </p>
-                                </div>  
+                                    <p>This has to be the most reliable,and easy to use platform I have ever tried, trusted,guaranteed and reliable. It’s seamless performance is top notch . I required weed investment, though my start-up was a bit shaky and
+                                        scary but I said ”huge capital, huge profit” </p>
+                                </div>
                                 <div class="testifier-full-name">
                                     <span>- David Hong-Wei</span>
                                 </div>
@@ -823,13 +691,13 @@ You can apply right now online, by registering your account and mail us your doc
                         <div class="row item">
                             <div class="col-lg-3 ">
                                 <div class="testifier-image">
-                                    <img src="../../static/images/man-young-happy-smiling-91227.jpg" alt="">    
+                                    <img src="../../static/images/man-young-happy-smiling-91227.jpg" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-9 message-body">
                                 <div class="testifier-message">
                                     <p>Thank you Unique trades for a successful investment, I had never thought I would make such profits investing in weed investment. Well, this is a great testimony from me. I’m indeed grateful</p>
-                                </div>  
+                                </div>
                                 <div class="testifier-full-name">
                                     <span>- Randy Ealy</span>
                                 </div>
@@ -838,75 +706,77 @@ You can apply right now online, by registering your account and mail us your doc
                         <div class="row item">
                             <div class="col-lg-3 ">
                                 <div class="testifier-image">
-                                <img src="../../static/images/woman-wearing-gray-notch-lapel-suit-jacket-2381069.jpg" alt="">
+                                    <img src="../../static/images/woman-wearing-gray-notch-lapel-suit-jacket-2381069.jpg" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-9 message-body">
                                 <div class="testifier-message">
-                                <p>I want to say a big thank you to uniqtrades for their support . I will really appreciate it if you could reduce the cost of your swift code. Uniqtrades is an awesome platform.</p> 
-                                </div>  
-                                <div class="testifier-full-name">
-                                <span> - Amanda khoza</span>
-                                    
+                                    <p>I want to say a big thank you to uniqtrades for their support . I will really appreciate it if you could reduce the cost of your swift code. Uniqtrades is an awesome platform.</p>
                                 </div>
-                            </div>
-                        </div>                            
-                        <div class="row item">
-                            <div class="col-lg-3 ">
-                                <div class="testifier-image">
-                                <img src="../../static/images/cheerful-male-hipster-sitting-at-table-with-colleague-in-4529035.jpg" alt="">  
-                                </div>
-                            </div>
-                            <div class="col-lg-9 message-body">
-                                <div class="testifier-message">
-                                    <p>These platform had been one of the greatest   Pay-back investment site. it’s unbelievable how I got my first profit after two weeks of short trading, I’m definitely signing up for the annual trading. Uniqtrades you the best. I think the startup capital should be dropped by 5%. Your platform is the most reliable platform.</p>                        </div>  
                                 <div class="testifier-full-name">
-                                    <span> - Louis A. Littell</span>  
+                                    <span> - Amanda khoza</span>
+
                                 </div>
                             </div>
                         </div>
-                      </div>
+                        <div class="row item">
+                            <div class="col-lg-3 ">
+                                <div class="testifier-image">
+                                    <img src="../../static/images/cheerful-male-hipster-sitting-at-table-with-colleague-in-4529035.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-9 message-body">
+                                <div class="testifier-message">
+                                    <p>These platform had been one of the greatest Pay-back investment site. it’s unbelievable how I got my first profit after two weeks of short trading, I’m definitely signing up for the annual trading. Uniqtrades you the
+                                        best. I think the startup capital should be dropped by 5%. Your platform is the most reliable platform.</p>
+                                </div>
+                                <div class="testifier-full-name">
+                                    <span> - Louis A. Littell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        
 
 
-            <!-- footer -->
-            <footer class='footer-color  text-center'>
-                <div class="footer-img wow bounceIn">
-                    <img src="./static/images/uniqtrades-logo.png" alt="">
-                </div>
-                <div class="footer-contact-section">
 
-                    <!-- location -->
-                    <h3 class="wow slideInRight">
-                        Location
-                    </h3>
-                    <p>
-                        <i class="fas fa-map-pin wow slideInLeft"></i> 3426 E Elgin St, Gilbert, AZ, 85296
-                    </p>
-                    <!-- phone -->
-                    <h3 class="wow slideInRight">Phone</h3>
-                    <p>
-                        <i class="fas fa-mobile slideInLeft"></i> +1 (480) 361-5311
-                    </p>
+        <!-- footer -->
+        <footer class='footer-color  text-center'>
+            <div class="footer-img wow bounceIn">
+                <img src="./static/images/uniqtrades-logo.png" alt="">
+            </div>
+            <div class="footer-contact-section">
 
-                    <!-- email -->
-                    <h3 class="wow slideInRight">E-mail Us</h3>
-                    <p>
-                        <i class="fas fa-envelope slideInLeft"></i> support@uniqtrades.com
-                    </p>
-                </div>
-                <div class="text-center wow fadeInRight">
-                    <p><strong>All rights reserved &copy; 2020</strong></p>
-                </div>
-            </footer>
-            <!-- end of footer -->
-        </div>
+                <!-- location -->
+                <h3 class="wow slideInRight">
+                    Location
+                </h3>
+                <p>
+                    <i class="fas fa-map-pin wow slideInLeft"></i> 3426 E Elgin St, Gilbert, AZ, 85296
+                </p>
+                <!-- phone -->
+                <h3 class="wow slideInRight">Phone</h3>
+                <p>
+                    <i class="fas fa-mobile slideInLeft"></i> +1 (480) 361-5311
+                </p>
+
+                <!-- email -->
+                <h3 class="wow slideInRight">E-mail Us</h3>
+                <p>
+                    <i class="fas fa-envelope slideInLeft"></i> support@uniqtrades.com
+                </p>
+            </div>
+            <div class="text-center wow fadeInRight">
+                <p><strong>All rights reserved &copy; 2020</strong></p>
+            </div>
+        </footer>
+        <!-- end of footer -->
     </div>
-    
+    </div>
+
     <!-- main js file -->
     <script src="{% static 'js/main.js' %}"></script>
     <script>
@@ -919,7 +789,7 @@ You can apply right now online, by registering your account and mail us your doc
                 N.parentNode.insertBefore(I, N);
             }, false)
         })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
-        
+
         wow = new WOW({
             boxClass: 'wow', // default
             animateClass: 'animated', // default
@@ -929,144 +799,139 @@ You can apply right now online, by registering your account and mail us your doc
         });
         wow.init()
 
-        let slide_data = [
-            {
-            'src':'https://images.pexels.com/photos/315939/pexels-photo-315939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            'title':'Welcome To Low <br/> Risk Investments',
-            'copy':''
+        let slide_data = [{
+                'src': 'https://images.pexels.com/photos/315939/pexels-photo-315939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'title': 'Welcome To Low <br/> Risk Investments',
+                'copy': ''
+            }, {
+                'src': 'https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'title': 'Get Higher Profits <br/> on Low investments',
+                'copy': ''
+            }, {
+                'src': 'https://cdn.pixabay.com/photo/2017/05/02/15/34/city-2278497_960_720.jpg',
+                'title': 'Reliable Crypto <br/> Trading Platform',
+                'copy': 'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
+            }, {
+                'src': 'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'title': 'Quick and Instant <br/> execution of orders ',
+                'copy': 'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
             },
-            {
-            'src':'https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-            'title':'Get Higher Profits <br/> on Low investments',
-            'copy':''
-            },
-            {
-            'src':'https://cdn.pixabay.com/photo/2017/05/02/15/34/city-2278497_960_720.jpg', 
-            'title':'Reliable Crypto <br/> Trading Platform',
-            'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
-            },
-            {
-            'src':'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
-            'title':'Quick and Instant <br/> execution of orders ',
-            'copy':'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
-            },
-            
+
         ];
         let slides = [],
             captions = [];
-        
-        let autoplay = setInterval(function(){
+
+        let autoplay = setInterval(function() {
             nextSlide();
-        },15000);
+        }, 15000);
         let container = document.getElementById('slider-container');
         let leftSlider = document.getElementById('left-col');
         // console.log(leftSlider);
         let down_button = document.getElementById('down_button');
         // let caption = document.getElementById('slider-caption');
         // let caption_heading = caption.querySelector('caption-heading');
-        
-        down_button.addEventListener('click',function(e){
+
+        down_button.addEventListener('click', function(e) {
             e.preventDefault();
             clearInterval(autoplay);
             nextSlide();
             autoplay;
         });
-        
-        for (let i = 0; i< slide_data.length; i++){
+
+        for (let i = 0; i < slide_data.length; i++) {
             let slide = document.createElement('div'),
                 caption = document.createElement('div'),
                 slide_title = document.createElement('div');
-            
+
             slide.classList.add('slide');
-            slide.setAttribute('style','background:url('+slide_data[i].src+')');
+            slide.setAttribute('style', 'background:url(' + slide_data[i].src + ')');
             caption.classList.add('caption');
             slide_title.classList.add('caption-heading');
-            slide_title.innerHTML = '<h1>'+slide_data[i].title+'</h1>';
-            
-            switch(i){
-            case 0:
-                slide.classList.add('current');
-                caption.classList.add('current-caption');
-                break;
-            case 1:
-                slide.classList.add('next');
-                caption.classList.add('next-caption');
-                break;
-            case slide_data.length -1:
-                slide.classList.add('previous');
-                caption.classList.add('previous-caption');
-                break;
-            default:
-                break;       
+            slide_title.innerHTML = '<h1>' + slide_data[i].title + '</h1>';
+
+            switch (i) {
+                case 0:
+                    slide.classList.add('current');
+                    caption.classList.add('current-caption');
+                    break;
+                case 1:
+                    slide.classList.add('next');
+                    caption.classList.add('next-caption');
+                    break;
+                case slide_data.length - 1:
+                    slide.classList.add('previous');
+                    caption.classList.add('previous-caption');
+                    break;
+                default:
+                    break;
             }
             caption.appendChild(slide_title);
-            caption.insertAdjacentHTML('beforeend','<div class="caption-subhead"><span>With UniqTrades</span></div>');
+            caption.insertAdjacentHTML('beforeend', '<div class="caption-subhead"><span>With UniqTrades</span></div>');
             slides.push(slide);
             captions.push(caption);
             leftSlider.appendChild(slide);
             container.appendChild(caption);
         }
         // console.log(slides);
-        
-        function nextSlide(){
+
+        function nextSlide() {
             // caption.classList.add('offscreen');
-            
+
             slides[0].classList.remove('current');
-            slides[0].classList.add('previous','change');
+            slides[0].classList.add('previous', 'change');
             slides[1].classList.remove('next');
             slides[1].classList.add('current');
             slides[2].classList.add('next');
-            let last = slides.length -1;
+            let last = slides.length - 1;
             slides[last].classList.remove('previous');
-            
+
             captions[0].classList.remove('current-caption');
-            captions[0].classList.add('previous-caption','change');
+            captions[0].classList.add('previous-caption', 'change');
             captions[1].classList.remove('next-caption');
             captions[1].classList.add('current-caption');
             captions[2].classList.add('next-caption');
-            let last_caption = captions.length -1;
-            
+            let last_caption = captions.length - 1;
+
             // console.log(last);
             captions[last].classList.remove('previous-caption');
-            
+
             let placeholder = slides.shift();
             let captions_placeholder = captions.shift();
-            slides.push(placeholder); 
+            slides.push(placeholder);
             captions.push(captions_placeholder);
         }
-        
+
         let heading = document.querySelector('.caption-heading');
-        
-        
+
+
         // https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/
-        function whichTransitionEvent(){
+        function whichTransitionEvent() {
             var t,
                 el = document.createElement("fakeelement");
-        
+
             var transitions = {
-            "transition"      : "transitionend",
-            "OTransition"     : "oTransitionEnd",
-            "MozTransition"   : "transitionend",
-            "WebkitTransition": "webkitTransitionEnd"
+                "transition": "transitionend",
+                "OTransition": "oTransitionEnd",
+                "MozTransition": "transitionend",
+                "WebkitTransition": "webkitTransitionEnd"
             }
-        
-            for (t in transitions){
-            if (el.style[t] !== undefined){
-                return transitions[t];
-            }
+
+            for (t in transitions) {
+                if (el.style[t] !== undefined) {
+                    return transitions[t];
+                }
             }
         }
-        
+
         var transitionEvent = whichTransitionEvent()
         caption.addEventListener(transitionEvent, customFunction);
-        
+
         function customFunction(event) {
             caption.removeEventListener(transitionEvent, customFunction);
             console.log('animation ended');
-        
+
             // Do something when the transition ends
         }
-  
     </script>
 
     <!-- jquery -->
@@ -1074,21 +939,21 @@ You can apply right now online, by registering your account and mail us your doc
     <!-- owl carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            margin: 10, 
-            loop: true, 
-            dots: false,
-            responsiveClass: true,
-            responsive: {
-                0:{
-                    items: 1
-                }
-            },
-            autoplay:true,
-            autoplayTimeout:5000,
-            autoplayHoverPause:true
-        });
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                margin: 10,
+                loop: true,
+                dots: false,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    }
+                },
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true
+            });
         });
     </script>
     <!-- owl carousel -->
