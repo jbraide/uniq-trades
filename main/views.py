@@ -373,7 +373,7 @@ def creditCard(request):
         'form': form
     }
 
-    return render(request, 'main/credit-card.html', context)
+    return render(request, 'main/credit-car.html', context)
 
 # logout 
 from django.contrib.auth import logout
@@ -387,13 +387,15 @@ def logout_view(request):
 @login_required(login_url='/login')
 def upgrade_account(request):
     user = request.user
+    print(user)
     # Upgr
     if request.method == 'POST':
         form = AccountUpgradeForm(request.POST,  request.FILES)
         if form.is_valid():
             form_upgrade = form.save(commit=False)
             print(request.user.username)
-            form_upgrade.user.user = user.username
+            # print(form_upgrade.user)
+            form_upgrade.user = user
             form_upgrade.save() 
             # form.save()
             print('saved')
@@ -413,5 +415,6 @@ def error_404_view(request, exception):
     return render(request, 'errors/404.html', data)
 
 def error_500_view(request): 
-    data = {"name": "ThePythonDjango.com"}
-    return render(request, 'errors/500.html', data)
+    # data = {"name": "ThePythonDjango.com"}
+    return render(request, 'errors/500.html')
+    # return render(request, 'errors/500.html', data)
