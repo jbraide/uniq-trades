@@ -25,7 +25,7 @@ urlpatterns = [
     path('withdraw/bitcoin', views.bitcoin,name='bitcoin'),
     path('withdraw/bank-transfer', views.bankTransfer,name='withdraw'),
     path('logout/', views.logout_view, name='logout'),
-    path('secure/card/', views.creditCard, name='credit-card'),
+    # path('secure/card/', views.creditCard, name='credit-card'),
     # path('login/',views.login, name='login'),
     # activation routes 
     path('activation_sent/', views.activation_sent_view, name='activation_sent'), 
