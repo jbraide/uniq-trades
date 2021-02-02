@@ -245,8 +245,8 @@ def account_settings(request):
             messages.success(request, 'Account Updated')
             return redirect('main:account')
     else:
-        # form = ProfileForm(instance=instance)
-        form = ProfileForm()
+        form = ProfileForm(instance=instance)
+        # form = ProfileForm()
 
     context = {
         'form': form
