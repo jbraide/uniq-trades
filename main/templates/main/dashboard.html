@@ -1,6 +1,4 @@
-{% include 'dashboard/base.html' %}
-{% load static %} 
-{% block body %}
+{% include 'dashboard/base.html' %} {% load static %} {% block body %}
 <!-- Navigation -->
 {% include 'dashboard/navigation.html' %}
 
@@ -13,40 +11,34 @@
     <div class="container">
 
         <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-    "symbols": [
-      {
-        "proName": "FOREXCOM:SPXUSD",
-        "title": "S&P 500"
-      },
-      {
-        "proName": "FOREXCOM:NSXUSD",
-        "title": "Nasdaq 100"
-      },
-      {
-        "proName": "FX_IDC:EURUSD",
-        "title": "EUR/USD"
-      },
-      {
-        "proName": "BITSTAMP:BTCUSD",
-        "title": "BTC/USD"
-      },
-      {
-        "proName": "BITSTAMP:ETHUSD",
-        "title": "ETH/USD"
-      }
-    ],
-    "colorTheme": "light",
-    "isTransparent": false,
-    "displayMode": "adaptive",
-    "locale": "en"
-  }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                    "symbols": [{
+                        "proName": "FOREXCOM:SPXUSD",
+                        "title": "S&P 500"
+                    }, {
+                        "proName": "FOREXCOM:NSXUSD",
+                        "title": "Nasdaq 100"
+                    }, {
+                        "proName": "FX_IDC:EURUSD",
+                        "title": "EUR/USD"
+                    }, {
+                        "proName": "BITSTAMP:BTCUSD",
+                        "title": "BTC/USD"
+                    }, {
+                        "proName": "BITSTAMP:ETHUSD",
+                        "title": "ETH/USD"
+                    }],
+                    "colorTheme": "light",
+                    "isTransparent": false,
+                    "displayMode": "adaptive",
+                    "locale": "en"
+                }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
         <div class="greetings">
 
             <!-- reinstall -->
@@ -56,9 +48,9 @@
                 {% else %}
                 <h4 class="greeting-name">User</h4>
                 {% endif %}
-                 
-                 <span class="greeting">{{ greeting }}</span>
-                    
+
+                <span class="greeting">{{ greeting }}</span>
+
             </div>
         </div>
         <!-- account  -->
@@ -71,10 +63,8 @@
     <!-- test  -->
     <!-- level on dashboard -->
     <div class="container">
-        {% if user.accountupgrade.verify %}
-            LEVEL 2
-        {% else %}
-            <!-- upgrade warning  -->
+        {% if user.accountupgrade.verify %} LEVEL 2 {% else %}
+        <!-- upgrade warning  -->
         <div class="container">
             <div class="warning-container">
                 <p>Hello {{ user.username }}, Your Account has not been Verifed for Upgrades. Please visit the <a href="{% url 'main:upgrade' %}">Verify</a> Section to Verify your account.</p>
@@ -82,229 +72,215 @@
         </div>
         {% endif %}
     </div>
-    
 
-        <!-- desktop view of the amount  -->
-        <div id="mobile-version-amount-off">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="money-info item">
-                            <div class="current-balance-background">
-                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
 
-                                <!-- remove -->
-                                <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
-                                <div class="amount-container">
-                                    <span class="current-balance">Current Balance</span>
-                                     {% if balance %}
-                                    <h4>$ {{ balance.amount }}</h4>
-                                    {% else %}
-                                    <h4>$ 0.00 </h4>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="money-info item">
-                            <div class="total-deposits-background">
-                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-                                <div class="amount-container">
-                                    <span class="total-deposits">Total Deposits</span> 
-                                    {% if total_deposit.amount %}
-                                    <h4>$ {{ total_deposit.amount }}</h4>
-                                    {% else %}
-                                    <h4>$ 0.00 </h4>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="money-info item">
-                            <div class="current-balance-background">
-                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-                                <div class="amount-container">
-                                    <span class="total-withdrawals">Total Withdrawals</span>
-                                        {% if total_withdrawal.amount %}
-                                            <h4>{{ total_withdrawal.amount }}</h4>        
-                                        {% else %}
-                                            <h4>$ 0.00 </h4>        
-                                        {% endif %}
-                                </div>
+    <!-- desktop view of the amount  -->
+    <div id="mobile-version-amount-off">
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="money-info item">
+                        <div class="current-balance-background">
+                            <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+
+                            <!-- remove -->
+                            <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
+                            <div class="amount-container">
+                                <span class="current-balance">Current Balance</span> {% if balance %}
+                                <h4>$ {{ balance.amount }}</h4>
+                                {% else %}
+                                <h4>$ 0.00 </h4>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="money-info item">
-                            <div class="current-balance-background">
-                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                <div class="col-lg-4">
+                    <div class="money-info item">
+                        <div class="total-deposits-background">
+                            <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                            <div class="amount-container">
+                                <span class="total-deposits">Total Deposits</span> {% if total_deposit.amount %}
+                                <h4>$ {{ total_deposit.amount }}</h4>
+                                {% else %}
+                                <h4>$ 0.00 </h4>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="money-info item">
+                        <div class="current-balance-background">
+                            <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                            <div class="amount-container">
+                                <span class="total-withdrawals">Total Withdrawals</span> {% if total_withdrawal.amount %}
+                                <h4>{{ total_withdrawal.amount }}</h4>
+                                {% else %}
+                                <h4>$ 0.00 </h4>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="money-info item">
+                        <div class="current-balance-background">
+                            <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
 
-                                <!-- remove -->
-                                <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
-                                <div class="amount-container">
-                                    <span class="current-balance">Marijuana Investment</span>
-                                     {% if marijuana.amount %}
-                                    <h4>$ {{ marijuana.amount }}</h4>
-                                    {% else %}
-                                    <h4>$ 0.00 </h4>
-                                    {% endif %}
-                                </div>
+                            <!-- remove -->
+                            <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
+                            <div class="amount-container">
+                                <span class="current-balance">Marijuana Investment</span> {% if marijuana.amount %}
+                                <h4>$ {{ marijuana.amount }}</h4>
+                                {% else %}
+                                <h4>$ 0.00 </h4>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="money-info item">
-                            <div class="total-deposits-background">
-                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-                                <div class="amount-container">
-                                    <span class="total-deposits">Crude Oil</span> 
-                                    {% if crudeoil.amount %}
-                                    <h4>$ {{ crudeoil.amount }}</h4>
-                                    {% else %}
-                                    <h4>$ 0.00 </h4>
-                                    {% endif %}
-                                </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="money-info item">
+                        <div class="total-deposits-background">
+                            <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                            <div class="amount-container">
+                                <span class="total-deposits">Crude Oil</span> {% if crudeoil.amount %}
+                                <h4>$ {{ crudeoil.amount }}</h4>
+                                {% else %}
+                                <h4>$ 0.00 </h4>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="money-info item">
-                            <div class="current-balance-background">
-                                <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-                                <div class="amount-container">
-                                    <span class="total-withdrawals">Others</span>
-                                        {% if otherInvestments.amount %}
-                                            <h4>{{ otherInvestments.amount }}</h4>        
-                                        {% else %}
-                                            <h4>$ 0.00 </h4>        
-                                        {% endif %}
-                                </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="money-info item">
+                        <div class="current-balance-background">
+                            <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                            <div class="amount-container">
+                                <span class="total-withdrawals">Bitcoin</span> {% if otherInvestments.amount %}
+                                <h4>{{ otherInvestments.amount }}</h4>
+                                {% else %}
+                                <h4>$ 0.00 </h4>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- current balance et al information -->
-        <div class="mobile-version-amount-on">
-            <div class="container owl-carousel">
-                <div class="money-info item">
-                    <div class="current-balance-background">
-                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+    <!-- current balance et al information -->
+    <div class="mobile-version-amount-on">
+        <div class="container owl-carousel">
+            <div class="money-info item">
+                <div class="current-balance-background">
+                    <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
 
-                        <!-- remove -->
-                        <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
-                        <div class="amount-container">
-                            <span class="current-balance">Current Balance</span>
-                            {% if balance %}
-                        <h4>$ {{ balance.amount }}</h4>        
-                    {% else %}
-                        <h4>$ 0.00 </h4>        
-                    {% endif %} 
-                        </div>
+                    <!-- remove -->
+                    <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
+                    <div class="amount-container">
+                        <span class="current-balance">Current Balance</span> {% if balance %}
+                        <h4>$ {{ balance.amount }}</h4>
+                        {% else %}
+                        <h4>$ 0.00 </h4>
+                        {% endif %}
                     </div>
                 </div>
-
-                <div class="money-info item">
-                    <div class="total-deposits-background">
-                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-                        <div class="amount-container">
-                            <span class="total-deposits">Total Deposits</span>
-                             {% if total_deposit %}
-                        <h4>$ {{ total_deposit.amount }}</h4>        
-                    {% else %}
-                        <h4>$ 0.00 </h4>        
-                    {% endif %}    
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="money-info item">
-                    <div class="current-balance-background">
-                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-                        <div class="amount-container">
-                            <span class="total-withdrawals">Total Withdrawals</span>
-
-                            {% if total_withdrawal %}
-                        <h4>{{ total_withdrawal.amount }}</h4>        
-                    {% else %}
-                        <h4>$ 0.00 </h4>        
-                    {% endif %}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="money-info item">
-                    <div class="current-balance-background">
-                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-
-                        <!-- remove -->
-                        <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
-                        <div class="amount-container">
-                            <span class="current-balance">Marijuana</span>
-                            {% if marijuana.amount %}
-                        <h4>$ {{ marijuana.amount }}</h4>        
-                    {% else %}
-                        <h4>$ 0.00 </h4>        
-                    {% endif %} 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="money-info item">
-                    <div class="total-deposits-background">
-                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-                        <div class="amount-container">
-                            <span class="total-deposits">Crude Oil</span>
-                             {% if crudeoil.amount %}
-                        <h4>$ {{ crudeoil.amount }}</h4>        
-                    {% else %}
-                        <h4>$ 0.00 </h4>        
-                    {% endif %}    
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="money-info item">
-                    <div class="current-balance-background">
-                        <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
-                        <div class="amount-container">
-                            <span class="total-withdrawals">Others</span>
-
-                            {% if otherInvestments.amount %}
-                        <h4>{{ otherInvestments.amount }}</h4>        
-                    {% else %}
-                        <h4>$ 0.00 </h4>        
-                    {% endif %}
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="money-info item">
+                <div class="total-deposits-background">
+                    <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                    <div class="amount-container">
+                        <span class="total-deposits">Total Deposits</span> {% if total_deposit %}
+                        <h4>$ {{ total_deposit.amount }}</h4>
+                        {% else %}
+                        <h4>$ 0.00 </h4>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="money-info item">
+                <div class="current-balance-background">
+                    <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                    <div class="amount-container">
+                        <span class="total-withdrawals">Total Withdrawals</span> {% if total_withdrawal %}
+                        <h4>{{ total_withdrawal.amount }}</h4>
+                        {% else %}
+                        <h4>$ 0.00 </h4>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="money-info item">
+                <div class="current-balance-background">
+                    <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+
+                    <!-- remove -->
+                    <!-- <img src="../../static/images/icons/money.png" alt="" class="money-image"> -->
+                    <div class="amount-container">
+                        <span class="current-balance">Marijuana</span> {% if marijuana.amount %}
+                        <h4>$ {{ marijuana.amount }}</h4>
+                        {% else %}
+                        <h4>$ 0.00 </h4>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="money-info item">
+                <div class="total-deposits-background">
+                    <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                    <div class="amount-container">
+                        <span class="total-deposits">Crude Oil</span> {% if crudeoil.amount %}
+                        <h4>$ {{ crudeoil.amount }}</h4>
+                        {% else %}
+                        <h4>$ 0.00 </h4>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="money-info item">
+                <div class="current-balance-background">
+                    <img src="{% static '/images/icons/money.png'%}" alt="" class="money-image">
+                    <div class="amount-container">
+                        <span class="total-withdrawals">Others</span> {% if otherInvestments.amount %}
+                        <h4>{{ otherInvestments.amount }}</h4>
+                        {% else %}
+                        <h4>$ 0.00 </h4>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="container">
+    </div>
+    <div class="container">
 
-            <!-- reinstall -->
-            <!-- {% include 'dashboard/messages.html' %} -->
-        </div>
+        <!-- reinstall -->
+        <!-- {% include 'dashboard/messages.html' %} -->
+    </div>
 
-        <div class="container">
-            <!-- notifications -->
-            <div class="notifications-container">
-                <h3 class="notification">Notifications</h3>
-                <div class="notifications-list-container">
+    <div class="container">
+        <!-- notifications -->
+        <div class="notifications-container">
+            <h3 class="notification">Notifications</h3>
+            <div class="notifications-list-container">
 
-                    <!-- reinstall -->
-                    {% for noti in notification %}
-                <div class="row">                    
+                <!-- reinstall -->
+                {% for noti in notification %}
+                <div class="row">
                     <div class="col-xs-1">
                         <span class="fas fa-circle green"></span>
                     </div>
@@ -312,45 +288,43 @@
                         <div class="notification-detail">
                             <p>{{ noti.notification_detail }}</p>
                         </div>
-                        <div  class="notification-date-time">
+                        <div class="notification-date-time">
                             <span>Date: {{ noti.notification_date_time }} </span>
                         </div>
                     </div>
                     <div class="col-xs-3">
                         <div class="notification-amount">
-                        {% if noti.optional_amount %}
-                            <span>{{ noti.optional_amount }}</span>
-                        {% else %}
-                            <span>-</span>
-                        {% endif %}
+                            {% if noti.optional_amount %}
+                            <span>{{ noti.optional_amount }}</span> {% else %}
+                            <span>-</span> {% endif %}
                         </div>
                     </div>
-        
+
                 </div>
-            {% endfor %}
+                {% endfor %}
 
-                    <div class="row">
-                        <div class="col-xs-1">
-                            <span class="fas fa-circle red"></span>
-                        </div>
-                        <div class="col-xs-8">
-                            <div class="notification-detail">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                            </div>
-                            <div class="notification-date-time">
-                                <span>Date: Thur, 10 Oct 1996 18:11:10 GMT</span>
-                            </div>
-                        </div>
-                        <div class="col-xs-3">
-                            <div class="notification-amount">
-                                <span>- $50</span>
-                            </div>
-                        </div>
-
+                <div class="row">
+                    <div class="col-xs-1">
+                        <span class="fas fa-circle red"></span>
                     </div>
+                    <div class="col-xs-8">
+                        <div class="notification-detail">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        </div>
+                        <div class="notification-date-time">
+                            <span>Date: Thur, 10 Oct 1996 18:11:10 GMT</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="notification-amount">
+                            <span>- $50</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+    </div>
 
 
     {% endblock %}
