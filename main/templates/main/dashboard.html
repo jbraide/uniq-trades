@@ -43,15 +43,19 @@
 
             <!-- reinstall -->
             <div class="name">
-                {% if user %}
-                <h4 class="greeting-name">{{ user.first_name|title }},</h4>
+                {% if request.user %}
+                <h4 class="greeting-name">{{ request.user.first_name|title }},</h4>
                 {% else %}
                 <h4 class="greeting-name">User</h4>
                 {% endif %}
 
                 <span class="greeting">{{ greeting }}</span>
 
+
             </div>
+            <br> {% if request.user.profile.select_plan %}
+            <span><strong>Plan Selected:</strong> {{ request.user.profile.select_plan}} </span> {% else %}
+            <span>Select Plan</span> {% endif %}
         </div>
         <!-- account  -->
         <div class="account-circle">
