@@ -27,6 +27,20 @@ status_list = (
 )
 
 class Profile(models.Model):
+    plans = (
+        ('Premium', 'Premium'),
+        ('Luxury', 'Luxury'),
+        ('VIP', 'VIP'),
+        ('VIP Luxury', 'VIP Luxury'),
+        ('Silver', 'Silver'),
+        ('Gold', 'Gold'),
+        ('Platinum', 'Platinum'),
+        ('Diamond', 'Diamond'),
+        ('Sapphire', 'Sapphire'),
+        ('Emerald', 'Emerald'),
+        ('Tanzanite', 'Tanzanite'),
+        ('Ruby', 'Ruby'),
+    )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=23, default='', blank=True)
     last_name = models.CharField(max_length=23, default='', blank=True)
@@ -37,6 +51,7 @@ class Profile(models.Model):
     postal_or_zip_code = models.CharField(max_length=6, blank=True)
     profile_pic = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=None, null=True)
     signup_confirmation = models.BooleanField(default=False)
+    select_plan = models.CharField(max_length=40, choices=plans, blank=True, null=True)
     # gender = models.CharField(max_length=10, default = 'Select a gender', blank=True)
     # date_of_birth = models.DateField()
     # phone_number = models.IntegerField(blank=True)
