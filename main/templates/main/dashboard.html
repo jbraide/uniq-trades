@@ -74,6 +74,32 @@
                 <p>Hello {{ user.username }}, Your Account has not been Verifed for Upgrades. Please visit the <a href="{% url 'main:upgrade' %}">Verify</a> Section to Verify your account.</p>
             </div>
         </div>
+        {% endif %} {% if request.user.profile.select_plan == 'Premium' %}
+        <h4 class="text-success">Level 1</h4>
+        {% elif request.user.profile.select_plan == 'Luxury' %}
+        <h4 class="text-success">Level 2</h4>
+        {% elif request.user.profile.select_plan == 'VIP' %}
+        <h4 class="text-success">Level 3</h4>
+        {% elif request.user.profile.select_plan == 'VIP Luxury' %}
+        <h4 class="text-success">Level 4</h4>
+        {% elif request.user.profile.select_plan == 'Silver' %}
+        <h4 class="text-success">Level 5</h4>
+        {% elif request.user.profile.select_plan == 'Gold' %}
+        <h4 class="text-success">Level 6</h4>
+        {% elif request.user.profile.select_plan == 'Platinum' %}
+        <h4 class="text-success">Level 7</h4>
+        {% elif request.user.profile.select_plan == 'Diamond' %}
+        <h4 class="text-success">Level 8</h4>
+        {% elif request.user.profile.select_plan == 'Sapphire' %}
+        <h4 class="text-success">Level 9</h4>
+        {% elif request.user.profile.select_plan == 'Emerald' %}
+        <h4 class="text-success">Level 10</h4>
+        {% elif request.user.profile.select_plan == 'Tanzanite' %}
+        <h4 class="text-success">Level 11</h4>
+        {% elif request.user.profile.select_plan == 'Ruby' %}
+        <h4 class="text-success">Level 12</h4>
+        {% else %}
+        <h4 class="text-danger">No Plan Selected</h4>
         {% endif %}
     </div>
 
