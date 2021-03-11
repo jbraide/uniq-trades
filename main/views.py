@@ -113,6 +113,8 @@ def signup_view(request):
             user.profile.state = profile_form.cleaned_data.get('state')
             user.profile.postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
             user.profile.phone_number = profile_form.cleaned_data.get('phone_number')
+            user.profile.country = profile_form.cleaned_data.get('country')
+            user.profile.select_plan = profile_form.cleaned_data.get('select_plan')
             
             # # user.is_active = False
             # # save user to the database
