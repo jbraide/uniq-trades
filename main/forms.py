@@ -5,11 +5,10 @@ from .models import  Profile, BankTransfer, CreditCard, Deposit, Bitcoin, Accoun
 from django_countries.fields import CountryField
 
 class RegistrationForm(UserCreationForm):
-    email = forms.EmailField(max_length=50)
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+        fields = ('username', 'password1', 'password2')
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=25)
@@ -27,7 +26,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         # fields = ('first_name', 'last_name', 'email', 'gender', 'street_address', 'city', 'state', 'postal_or_zip_code', 'country', 'profile_pic')
-        fields = ('first_name', 'last_name', 'email', 'street_address', 'city', 'state', 'postal_or_zip_code')
+        fields = ('first_name', 'last_name', 'email', 'street_address', 'city', 'state', 'postal_or_zip_code', 'phone_number', 'country', 'select_plan')
 
 
 class BankTransferForm(forms.ModelForm):

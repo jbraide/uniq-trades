@@ -96,22 +96,29 @@ def signup_view(request):
         # form = RegistrationForm(request.POST, instance=profile)
 
         form  = RegistrationForm(request.POST)
-        # profile = ProfileForm(request.POST)
+        profile_form = ProfileForm(request.POST)
 
-        if form.is_valid():
+        if form.is_valid() and profile_form.is_valid():
             user = form.save()
             user.refresh_from_db()
 
-            # inserting profile data to the user data 
-            user.profile.first_name = form.cleaned_data.get('first_name')
-            user.profile.last_name = form.cleaned_data.get('last_name')
-            user.profile.email = form.cleaned_data.get('email') 
+            from time import sleep
+            sleep
+            # # inserting profile data to the user data 
+            user.profile.first_name = profile_form.cleaned_data.get('first_name')
+            user.profile.last_name = profile_form.cleaned_data.get('last_name')
+            user.profile.email = profile_form.cleaned_data.get('email') 
+            user.profile.street_address = profile_form.cleaned_data.get('street_address')
+            user.profile.city = profile_form.cleaned_data.get('city')
+            user.profile.state = profile_form.cleaned_data.get('state')
+            user.profile.postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
+            user.profile.phone_number = profile_form.cleaned_data.get('phone_number')
             
-            # user.is_active = False
-            # save user to the database
+            # # user.is_active = False
+            # # save user to the database
             user.save()
             
-            # test login
+            # # test login
 
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')            
@@ -135,11 +142,11 @@ def signup_view(request):
     
     else:
         form = RegistrationForm()
-        # profile = ProfileForm()
+        profile_form = ProfileForm()
 
     context = {
         'form': form,
-        # 'profile':profile,
+        'profile':profile_form,
     }
     return render(request, 'registration/register.html', context)
 

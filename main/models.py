@@ -26,6 +26,10 @@ status_list = (
     ('Declined', 'declined')
 )
 
+# import django countries &  phone numbers
+from phonenumber_field.modelfields import PhoneNumberField
+from django_countries.fields import CountryField
+
 class Profile(models.Model):
     plans = (
         ('Premium', 'Premium'),
@@ -46,16 +50,17 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=23, default='', blank=True)
     email = models.EmailField(max_length=50)
     street_address = models.CharField(max_length=150, default='', blank=True)
-    city =  models.CharField(max_length = 100, default=False, blank=True)
+    city =  models.CharField(max_length = 100, default='', blank=True)
     state = models.CharField(max_length=30, default= '', blank=True)
     postal_or_zip_code = models.CharField(max_length=6, blank=True)
     profile_pic = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=None, null=True)
     signup_confirmation = models.BooleanField(default=False)
     select_plan = models.CharField(max_length=40, choices=plans, blank=True, null=True)
-    # gender = models.CharField(max_length=10, default = 'Select a gender', blank=True)
-    # date_of_birth = models.DateField()
-    # phone_number = models.IntegerField(blank=True)
-    # country = models.CharField(max_length=13)
+    
+    # new update
+    phone_number = models.CharField(max_length=50, default='', blank=True, null=True)
+    country = CountryField(blank_label='(Select Country)', blank=True, null=True)
+
 
     def __str__(self):
         return self.user.username
