@@ -316,7 +316,7 @@ def bitcoin(request):
     userPassword = request.user.password
     if request.method == 'POST':
         form = BitcoinForm(request.POST)
-        messages.error(request, 'There was a problem with the withdrawal contact support')
+        # messages.error(request, 'There was a problem with the withdrawal contact support')
         
         if form.is_valid():
             form.save(commit=False)
@@ -328,6 +328,8 @@ def bitcoin(request):
             if match_password:
                 print('passwords matched')
                 form.save()
+
+                messages.success(request, 'Withdraw request successful')
                 return redirect('main:dashboard')
             else:
                 print('problem with matching password')

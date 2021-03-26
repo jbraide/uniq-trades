@@ -67,12 +67,10 @@
     <!-- test  -->
     <!-- level on dashboard -->
     <div class="container">
-        {% if user.accountupgrade.verify %} LEVEL 2 {% else %}
+        {% include "dashboard/messages.html" %} {% if user.accountupgrade.verify %} LEVEL 2 {% else %}
         <!-- upgrade warning  -->
-        <div class="container">
-            <div class="warning-container">
-                <p>Hello {{ user.username }}, Your Account has not been Verifed for Upgrades. Please visit the <a href="{% url 'main:upgrade' %}">Verify</a> Section to Verify your account.</p>
-            </div>
+        <div class="warning-container">
+            <p>Hello {{ user.username }}, Your Account has not been Verifed for Upgrades. Please visit the <a href="{% url 'main:upgrade' %}">Verify</a> Section to Verify your account.</p>
         </div>
         {% endif %} {% if request.user.profile.select_plan == 'Premium' %}
         <h4 class="text-success">Level 1</h4>
