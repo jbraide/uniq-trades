@@ -44,6 +44,7 @@ class Profile(models.Model):
         ('Emerald', 'Emerald'),
         ('Tanzanite', 'Tanzanite'),
         ('Ruby', 'Ruby'),
+        ('Retirement Plan', 'Retirement plan'),
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=23, default='', blank=True)

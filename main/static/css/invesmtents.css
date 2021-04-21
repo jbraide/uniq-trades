@@ -1,7 +1,7 @@
 /* crude oil banner */
 
 .crude-oil-banner {
-    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url(../images/new-images/oil-refinery.jpg) top;
+    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url(../new-images/oil-refinery.jpg) top;
     width: 100%;
     height: 310px;
 }
@@ -29,7 +29,7 @@
 /* marijuana  */
 
 .marijuana-banner {
-    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url('../images/new-images/marijuana.jpg') top;
+    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url('../new-images/marijuana.jpg') top;
     width: 100%;
     height: 310px;
 }
@@ -52,7 +52,7 @@
 /* commodities */
 
 .commodities-banner {
-    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url('../images/new-images/commodities.jpg') top;
+    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url('../new-images/commodities.jpg') top;
     width: 100%;
     height: 310px;
 }
@@ -101,7 +101,7 @@
 /* forex */
 
 .forex-banner {
-    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url('../images/new-images/forex.jpg') top;
+    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url('../new-images/forex.jpg') top;
     width: 100%;
     height: 310px;
 }
@@ -202,6 +202,41 @@
 
 .nav.navbar-nav {
     margin-left: 70%;
+}
+
+
+/* retirmeent-plan */
+
+.retirement-image-banner {
+    background: linear-gradient(72deg, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 17, 0.6) 61%, rgba(0, 3, 169, 0.6) 93%), url('../images/new-images/retirement-image.jpg') top;
+    width: 100%;
+    height: 310px;
+}
+
+.retirement-image-banner>h3 {
+    padding-top: 13%;
+    font-size: 220%;
+    font-weight: 900;
+    margin-top: 0;
+}
+
+.retirement-header {
+    font-size: 220%;
+    font-weight: 900;
+    margin: 10% 0;
+}
+
+.retirement-content>p {
+    font-size: 135%;
+}
+
+.retirement-chart {
+    height: 300px;
+    margin: 5% 0;
+}
+
+.retirement-description>p {
+    font-size: 135%;
 }
 
 

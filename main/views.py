@@ -54,6 +54,9 @@ def crudeOil(request):
 def commodities(request):
     return render(request, 'main/commodities.html')
 
+def retirement_plan(request):
+    return render(request, 'main/retirement-plan.html')
+
 # activation sent view 
 def activation_sent_view(request):
     return render(request, 'registration/activation_sent.html')

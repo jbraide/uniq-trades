@@ -15,6 +15,7 @@ urlpatterns = [
     path('invest/forex/', views.forex, name='forex' ),
     path('invest/commodities/', views.commodities, name='commodities' ),
     path('invest/crude-oil/', views.crudeOil, name='crude-oil' ),
+    path('invest/retirement/', views.retirement_plan, name='retirement-plan'),
     # dashboard logic
     path('account/', views.account, name='account'),
     path('account/settings/', views.account_settings, name='account-settings'),    
